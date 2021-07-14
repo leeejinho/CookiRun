@@ -46,6 +46,9 @@
     <Filter Include="04.Manager\TextureMgr">
       <UniqueIdentifier>{4be5d4b2-3c21-47ee-9ca4-5897833de34b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01.Obj\01.Player">
+      <UniqueIdentifier>{0d5374c2-f511-49b1-aea7-f49829909fa2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CookieRun.h">
@@ -114,6 +117,7 @@
     <ClInclude Include="Enum.h">
       <Filter>98.Headers</Filter>
     </ClInclude>
+    <ClInclude Include="Player.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CookieRun.cpp">
@@ -158,6 +162,7 @@
     <ClCompile Include="Scene.cpp">
       <Filter>03.Scene</Filter>
     </ClCompile>
+    <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="CookieRun.ico">
