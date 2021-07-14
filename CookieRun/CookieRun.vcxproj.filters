@@ -117,7 +117,9 @@
     <ClInclude Include="Enum.h">
       <Filter>98.Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h" />
+    <ClInclude Include="Player.h">
+      <Filter>01.Obj\01.Player</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CookieRun.cpp">
@@ -162,7 +164,9 @@
     <ClCompile Include="Scene.cpp">
       <Filter>03.Scene</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Player.cpp">
+      <Filter>01.Obj\01.Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="CookieRun.ico">
