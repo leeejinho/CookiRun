@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "MainGame.h"
 #include "Player.h"
+#include "Texture_Manager.h"
 
 CMainGame::CMainGame()
 {
@@ -35,7 +36,6 @@ void CMainGame::Render()
 
 void CMainGame::Release()
 {
-	
 	CGraphic_Device::Destroy_Instance();
 }
 
