@@ -51,7 +51,7 @@ void CObjMgr::Render(HDC _DC)
 	for (int i = 0; i < OBJID::END; ++i)
 	{
 		for (auto& pObj : m_listObj[i])
-			pObj->Render(_DC);
+			pObj->Render(/*_DC*/);
 	}
 }
 

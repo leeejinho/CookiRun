@@ -1,4 +1,5 @@
 #pragma once
+class CObj;
 class CMainGame final
 {
 private:
@@ -14,6 +15,6 @@ public:
 public:
 	static CMainGame* Create();
 private:
-	CMainGame* m_pPlayer;
+	CObj* m_pPlayer;
 };
 
