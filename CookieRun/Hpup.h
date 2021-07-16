@@ -7,6 +7,7 @@ class CHpup :	public CObj
 {
 public:
 	CHpup();
+	CHpup(float TexInfoX , float TexInfoY);
 	virtual ~CHpup();
 
 public:
@@ -15,8 +16,10 @@ public:
 	virtual void Late_Update() override;
 	virtual void Render() override;
 	virtual void Release() override;
+
 private:
 	int iNumber;
+	DWORD dwTime;
 };
 
 #endif // !__CHPUP_H__

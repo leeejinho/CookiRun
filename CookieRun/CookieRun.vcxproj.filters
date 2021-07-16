@@ -52,20 +52,23 @@
     <Filter Include="01.Obj\00.Item">
       <UniqueIdentifier>{cd90fc24-03f9-4bd1-bcfa-4f4b73414888}</UniqueIdentifier>
     </Filter>
-    <Filter Include="01.Obj\00.Item\01.Hpup">
-      <UniqueIdentifier>{b5293eed-48a3-48b6-b21b-e4853225395d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="01.Obj\00.Item\02.Giant">
       <UniqueIdentifier>{00bb3d15-9c0c-45ae-be98-294850c746a7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01.Obj\00.Item\03.Point">
-      <UniqueIdentifier>{5694cd53-719d-46fb-a7b5-51e48db5d652}</UniqueIdentifier>
     </Filter>
     <Filter Include="01.Obj\00.Item\04.Speed">
       <UniqueIdentifier>{d2693bc4-b8db-4bba-b1a5-16d21986283d}</UniqueIdentifier>
     </Filter>
     <Filter Include="04.Manager\CollisionMgr">
       <UniqueIdentifier>{23dfd037-5414-4fac-aaf0-dca2aaeeb85e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\00.Item\05.Jelly">
+      <UniqueIdentifier>{4d8dd794-4523-4f9e-9b7f-172a37bf044e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\00.Item\01.SP">
+      <UniqueIdentifier>{b5293eed-48a3-48b6-b21b-e4853225395d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\00.Item\03.HP">
+      <UniqueIdentifier>{5694cd53-719d-46fb-a7b5-51e48db5d652}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -136,7 +139,7 @@
       <Filter>98.Headers</Filter>
     </ClInclude>
     <ClInclude Include="Hpup.h">
-      <Filter>01.Obj\00.Item\01.Hpup</Filter>
+      <Filter>01.Obj\00.Item\01.SP</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>01.Obj\01.Player</Filter>
@@ -145,13 +148,16 @@
       <Filter>01.Obj\00.Item\02.Giant</Filter>
     </ClInclude>
     <ClInclude Include="Score.h">
-      <Filter>01.Obj\00.Item\03.Point</Filter>
+      <Filter>01.Obj\00.Item\03.HP</Filter>
     </ClInclude>
     <ClInclude Include="Speed.h">
       <Filter>01.Obj\00.Item\04.Speed</Filter>
     </ClInclude>
     <ClInclude Include="CollisionMgr.h">
       <Filter>04.Manager\CollisionMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="Jelly.h">
+      <Filter>01.Obj\00.Item\05.Jelly</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -198,7 +204,7 @@
       <Filter>03.Scene</Filter>
     </ClCompile>
     <ClCompile Include="Hpup.cpp">
-      <Filter>01.Obj\00.Item\01.Hpup</Filter>
+      <Filter>01.Obj\00.Item\01.SP</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>01.Obj\01.Player</Filter>
@@ -207,13 +213,16 @@
       <Filter>01.Obj\00.Item\02.Giant</Filter>
     </ClCompile>
     <ClCompile Include="Score.cpp">
-      <Filter>01.Obj\00.Item\03.Point</Filter>
+      <Filter>01.Obj\00.Item\03.HP</Filter>
     </ClCompile>
     <ClCompile Include="Speed.cpp">
       <Filter>01.Obj\00.Item\04.Speed</Filter>
     </ClCompile>
     <ClCompile Include="CollisionMgr.cpp">
       <Filter>04.Manager\CollisionMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Jelly.cpp">
+      <Filter>01.Obj\00.Item\05.Jelly</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

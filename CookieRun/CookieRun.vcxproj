@@ -166,6 +166,7 @@
     <ClInclude Include="Giant.h" />
     <ClInclude Include="Graphic_Device.h" />
     <ClInclude Include="Hpup.h" />
+    <ClInclude Include="Jelly.h" />
     <ClInclude Include="KeyMgr.h" />
     <ClInclude Include="MainGame.h" />
     <ClInclude Include="MultiTexture.h" />
@@ -192,6 +193,7 @@
     <ClCompile Include="Giant.cpp" />
     <ClCompile Include="Graphic_Device.cpp" />
     <ClCompile Include="Hpup.cpp" />
+    <ClCompile Include="Jelly.cpp" />
     <ClCompile Include="KeyMgr.cpp" />
     <ClCompile Include="MainGame.cpp" />
     <ClCompile Include="MultiTexture.cpp" />

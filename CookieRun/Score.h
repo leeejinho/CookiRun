@@ -7,7 +7,9 @@ class CScore :	public CObj
 {
 public:
 	CScore();
+	CScore(float TexInfoX, float TexInfoY);
 	virtual ~CScore();
+
 public:
 	virtual void Initialize() override;
 	virtual int Update() override;
@@ -16,6 +18,7 @@ public:
 	virtual void Release() override;
 private:
 	int iNumber;
+	DWORD dwTime;
 };
 
 #endif // !__CSORE_H__
