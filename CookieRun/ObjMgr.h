@@ -36,7 +36,7 @@ private:
 	static CObjMgr*		m_pInstance;
 
 	list<CObj*>			m_listObj[OBJID::END];
-	int			m_iStairMax ;
+	int					m_iStairMax ;
 
 };
 
