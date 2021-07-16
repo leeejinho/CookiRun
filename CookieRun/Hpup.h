@@ -17,6 +17,7 @@ public:
 	virtual void Release() override;
 private:
 	int iNumber;
+	DWORD NumTime;
 };
 
 #endif // !__CHPUP_H__
