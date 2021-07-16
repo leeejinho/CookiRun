@@ -45,6 +45,7 @@ HRESULT CMainGame::Initialize()
 
 void CMainGame::Update()
 {
+	m_pHpup->Update();
 	m_pPlayer->Update();
 }
 

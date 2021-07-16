@@ -15,14 +15,17 @@ public:
 	virtual void Release() override;
 
 private:
+	void Move_Player();
 	void Key_Check();
 	void Jumping();
+	void Update_Rect();
 
 private:
 	D3DXVECTOR3 m_vPos;
 	D3DXVECTOR3 m_vSize;
 	DWORD		m_dwDelay;
 	WCHAR*		m_pStateKey;
+	RECT		m_Rect;
 
 	bool		m_bSlide;
 
@@ -32,6 +35,8 @@ private:
 	float		m_fJumpPower;
 	float		m_fJumpTime;
 	float		m_fJumpY;
+
+	float		m_fSpeed;
 
 	int			m_iDrawID;
 	int			m_iMaxDrawID;
