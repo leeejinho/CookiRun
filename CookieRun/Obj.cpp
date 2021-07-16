@@ -3,6 +3,7 @@
 
 
 CObj::CObj()
+	:m_bDead(false)
 {
 }
 

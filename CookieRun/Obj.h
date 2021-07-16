@@ -10,8 +10,16 @@ public:
 	virtual void Initialize()PURE;
 	virtual int Update()PURE;
 	virtual void Late_Update()PURE;
-	virtual void Render(HDC _DC)PURE;
+	virtual void Render()PURE;
 	virtual void Release()PURE;
+public:
+	void Set_Dead() { m_bDead = true; }
+
+public:
+	const TEXINFO& Get_TexInfo() const { return m_TexInfo; }
+protected:
+	bool		m_bDead;
+	TEXINFO		m_TexInfo;
 };
 
 #endif // !__OBJ_H__

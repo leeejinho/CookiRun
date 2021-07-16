@@ -49,6 +49,24 @@
     <Filter Include="01.Obj\01.Player">
       <UniqueIdentifier>{0d5374c2-f511-49b1-aea7-f49829909fa2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01.Obj\00.Item">
+      <UniqueIdentifier>{cd90fc24-03f9-4bd1-bcfa-4f4b73414888}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\00.Item\01.Hpup">
+      <UniqueIdentifier>{b5293eed-48a3-48b6-b21b-e4853225395d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\00.Item\02.Giant">
+      <UniqueIdentifier>{00bb3d15-9c0c-45ae-be98-294850c746a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\00.Item\03.Point">
+      <UniqueIdentifier>{5694cd53-719d-46fb-a7b5-51e48db5d652}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\00.Item\04.Speed">
+      <UniqueIdentifier>{d2693bc4-b8db-4bba-b1a5-16d21986283d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04.Manager\CollisionMgr">
+      <UniqueIdentifier>{23dfd037-5414-4fac-aaf0-dca2aaeeb85e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CookieRun.h">
@@ -117,7 +135,24 @@
     <ClInclude Include="Enum.h">
       <Filter>98.Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h" />
+    <ClInclude Include="Hpup.h">
+      <Filter>01.Obj\00.Item\01.Hpup</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>01.Obj\01.Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Giant.h">
+      <Filter>01.Obj\00.Item\02.Giant</Filter>
+    </ClInclude>
+    <ClInclude Include="Score.h">
+      <Filter>01.Obj\00.Item\03.Point</Filter>
+    </ClInclude>
+    <ClInclude Include="Speed.h">
+      <Filter>01.Obj\00.Item\04.Speed</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionMgr.h">
+      <Filter>04.Manager\CollisionMgr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CookieRun.cpp">
@@ -162,7 +197,24 @@
     <ClCompile Include="Scene.cpp">
       <Filter>03.Scene</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Hpup.cpp">
+      <Filter>01.Obj\00.Item\01.Hpup</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>01.Obj\01.Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Giant.cpp">
+      <Filter>01.Obj\00.Item\02.Giant</Filter>
+    </ClCompile>
+    <ClCompile Include="Score.cpp">
+      <Filter>01.Obj\00.Item\03.Point</Filter>
+    </ClCompile>
+    <ClCompile Include="Speed.cpp">
+      <Filter>01.Obj\00.Item\04.Speed</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionMgr.cpp">
+      <Filter>04.Manager\CollisionMgr</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="CookieRun.ico">
