@@ -18,7 +18,17 @@ public:
 	void Release();
 
 public:
+	void Delete_ID(OBJID::ID _eID);
+
+public:
 	CObj* Get_Player() { return m_listObj[OBJID::PLAYER].front(); }
+
+public:
+	void Save_Land();
+	void Save_Block();
+
+	void Load();
+
 
 public:
 	static CObjMgr* Get_Instance()

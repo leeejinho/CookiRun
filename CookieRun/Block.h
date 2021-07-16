@@ -17,7 +17,13 @@ public:
 	virtual void Release()PURE;
 
 public:
+	const D3DXVECTOR3& Get_Pos() const { return m_vPos; }
+	const DWORD& Get_DrawId() const { return DrawId; }
+	const BLOCK_TYPE& Get_Type() const { return m_eType; }
+
+public:
 	void Set_Pos(float _fx, float _fy) { m_vPos.x = _fx; m_vPos.y = _fy; }
+
 
 protected:
 	D3DXVECTOR3	m_vPos;
@@ -27,5 +33,6 @@ protected:
 	DWORD	DrawId;
 
 	BLOCK_TYPE m_eType;
+	HDC	hdc;
 };
 
