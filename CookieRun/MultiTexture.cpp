@@ -24,7 +24,7 @@ HRESULT CMultiTexture::Insert_Texture(
 	{
 		TEXINFO* pTexInfo = nullptr; 
 		TCHAR szFileFullPath[MAX_PATH] = L""; 
-		for (int i = 0 ; i < dwCount; ++i)
+		for (int i = 0 ; i < (signed)dwCount; ++i)
 		{
 			
 			////L"../Texture/Stage/Player/Attack/AKIHA_AKI01_000.png"
