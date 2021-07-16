@@ -25,3 +25,4 @@ protected:
 };
 
 #endif // !__OBJ_H__
+

@@ -8,7 +8,8 @@
 #include "Score.h"
 #include "Speed.h"
 #include "Jelly.h"
-
+#include "SceneMgr.h"
+#include "KeyMgr.h"
 
 CMainGame::CMainGame()
 {
@@ -24,19 +25,21 @@ HRESULT CMainGame::Initialize()
 {
 	CGraphic_Device::Get_Instance()->Ready_Graphic_Device();
 
+ 	CSceneMgr::Get_Instance()->Scene_Change(CSceneMgr::STAGE);
+  
 	m_pPlayer = new CPlayer;
 	m_pPlayer->Initialize();
 
-	m_pHpup = new CHpup(500.f,100.f);		//¿©±â¼­ À§Ä¡ Á¤ÇØÁÖ±â
+	m_pHpup = new CHpup(500.f,100.f);		//ï¿½ï¿½ï¿½â¼­ ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½Ö±ï¿½
 	m_pHpup->Initialize();
 
-	m_pGiant = new CGiant(300.f,200.f);		//¿©±â¼­ À§Ä¡ Á¤ÇØÁÖ±â
+	m_pGiant = new CGiant(300.f,200.f);		//ï¿½ï¿½ï¿½â¼­ ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½Ö±ï¿½
 	m_pGiant->Initialize();
 
-	m_pScore = new CScore(500.f,300.f);		//¿©±â¼­ À§Ä¡ Á¤ÇØÁÖ±â
+	m_pScore = new CScore(500.f,300.f);		//ï¿½ï¿½ï¿½â¼­ ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½Ö±ï¿½
 	m_pScore->Initialize();
 
-	m_pSpeed = new CSpeed(100.f,500.f);	//¿©±â¼­ À§Ä¡ Á¤ÇØÁÖ±â
+	m_pSpeed = new CSpeed(100.f,500.f);	//ï¿½ï¿½ï¿½â¼­ ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½Ö±ï¿½
 	m_pSpeed->Initialize();
 
 	m_pJelly = new CJelly(400.f,200.f);
@@ -53,30 +56,37 @@ void CMainGame::Update()
 	m_pScore->Update();
 	m_pSpeed->Update();
 	m_pJelly->Update();
+
+	CSceneMgr::Get_Instance()->Update();
+	CSceneMgr::Get_Instance()->Late_Update();
 }
 
 void CMainGame::Render()
 {
 	CGraphic_Device::Get_Instance()->Render_Begin();
   
-	m_pPlayer->Render();	//ÄíÅ° »çÀÌÁî 364*364
+	m_pPlayer->Render();	// 364*364
 
-	m_pHpup->Render();		//¾ÆÀÌÅÛ »çÀÌÁî 90*90
+	m_pHpup->Render();		// 90*90
 
-	m_pGiant->Render();		//¾ÆÀÌÅÛ »çÀÌÁî 90*90
+	m_pGiant->Render();		// 90*90
 
-	m_pScore->Render();		//¾ÆÀÌÅÛ »çÀÌÁî 90*90
+	m_pScore->Render();		// 90*90
 
-	m_pSpeed->Render();		//¾ÆÀÌÅÛ »çÀÌÁî 90*90
+	m_pSpeed->Render();		// 90*90
 
-	m_pJelly->Render();		//¾ÆÀÌÅÛ »çÀÌÁî 40*53
-  
-	CGraphic_Device::Get_Instance()->Render_End();
+	m_pJelly->Render();		// 40*53
+
+	CSceneMgr::Get_Instance()->Render();
+
+  CGraphic_Device::Get_Instance()->Render_End();
 }
 
 void CMainGame::Release()
 {
 	CGraphic_Device::Destroy_Instance();
+  CSceneMgr::Destroy_Instance();
+	CKeyMgr::Destroy_Instance();
 }
 
 CMainGame * CMainGame::Create()
@@ -91,3 +101,4 @@ CMainGame * CMainGame::Create()
 	}
 	return pInstance;
 }
+

@@ -157,17 +157,20 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Block.h" />
     <ClInclude Include="CollisionMgr.h" />
     <ClInclude Include="CookieRun.h" />
     <ClInclude Include="Define.h" />
+    <ClInclude Include="DjumpBlock.h" />
     <ClInclude Include="Enum.h" />
     <ClInclude Include="Extern.h" />
     <ClInclude Include="Function.h" />
     <ClInclude Include="Giant.h" />
     <ClInclude Include="Graphic_Device.h" />
+    <ClInclude Include="JumpBlock.h" />
     <ClInclude Include="Hpup.h" />
-    <ClInclude Include="Jelly.h" />
     <ClInclude Include="KeyMgr.h" />
+    <ClInclude Include="Land.h" />
     <ClInclude Include="MainGame.h" />
     <ClInclude Include="MultiTexture.h" />
     <ClInclude Include="Obj.h" />
@@ -179,6 +182,8 @@
     <ClInclude Include="Score.h" />
     <ClInclude Include="ScrollMgr.h" />
     <ClInclude Include="SingleTexture.h" />
+    <ClInclude Include="SlideBlock.h" />
+    <ClInclude Include="Stage.h" />
     <ClInclude Include="Speed.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Struct.h" />
@@ -188,13 +193,16 @@
     <ClInclude Include="Texture_Manager.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Block.cpp" />
+    <ClCompile Include="DjumpBlock.cpp" />
+    <ClCompile Include="JumpBlock.cpp" />
     <ClCompile Include="CollisionMgr.cpp" />
     <ClCompile Include="CookieRun.cpp" />
     <ClCompile Include="Giant.cpp" />
     <ClCompile Include="Graphic_Device.cpp" />
     <ClCompile Include="Hpup.cpp" />
-    <ClCompile Include="Jelly.cpp" />
     <ClCompile Include="KeyMgr.cpp" />
+    <ClCompile Include="Land.cpp" />
     <ClCompile Include="MainGame.cpp" />
     <ClCompile Include="MultiTexture.cpp" />
     <ClCompile Include="Obj.cpp" />
@@ -205,6 +213,8 @@
     <ClCompile Include="Score.cpp" />
     <ClCompile Include="ScrollMgr.cpp" />
     <ClCompile Include="SingleTexture.cpp" />
+    <ClCompile Include="SlideBlock.cpp" />
+    <ClCompile Include="Stage.cpp" />
     <ClCompile Include="Speed.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

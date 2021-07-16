@@ -2,13 +2,16 @@
 #include "Player.h"
 #include "Texture_Manager.h"
 #include "KeyMgr.h"
+#include "ScrollMgr.h"
 
 CPlayer::CPlayer()
 	: m_dwDelay(0), m_iDrawID(0), m_iMaxDrawID(0), m_pStateKey(L""), m_bSlide(false),
-	m_fJumpPower(0.f), m_fJumpTime(0.f), m_fJumpY(0.f), m_bJump(false),m_bDoubleJump(false) , m_iMaxJump(0)
+	m_fJumpPower(0.f), m_fJumpTime(0.f), m_fJumpY(0.f), m_bJump(false), m_bDoubleJump(false), m_iMaxJump(0),
+	m_fSpeed(0.f)
 {
 	ZeroMemory(&m_vPos, sizeof(D3DXVECTOR3));
 	ZeroMemory(&m_vSize, sizeof(D3DXVECTOR3));
+	ZeroMemory(&m_Rect, sizeof(RECT));
 }	  
 
 
@@ -29,9 +32,11 @@ void CPlayer::Initialize()
 	m_vPos = { 200.f, WINCY * 0.5f, 0.f };
 	m_vSize = { 1.f, 1.f, 0.f };
 	m_iDrawID = 0;
+
 	m_pStateKey = L"Run";
 	m_fJumpPower = 50.f;
 	m_iMaxJump = 2;
+	m_fSpeed = 5.f;
 
 }
 
@@ -40,6 +45,7 @@ int CPlayer::Update()
 	if (m_bDead)
 		return OBJ_DEAD;
 
+	Move_Player();
 	Key_Check();
 	Jumping();
 
@@ -63,12 +69,12 @@ void CPlayer::Render()
 		}
 		m_dwDelay = GetTickCount();
 	}
+	float fScrollX = CScrollMgr::Get_Instance()->Get_ScrollX();
+	const TEXINFO* pTexInfo = CTexture_Manager::Get_Instance()->Get_TexInfo_Texture(L"Player", m_pStateKey, m_iDrawID);	
 
-	const TEXINFO* pTexInfo = CTexture_Manager::Get_Instance()->Get_TexInfo_Texture(L"Player", m_pStateKey, m_iDrawID);
-	
 	D3DXMATRIX matScale, matTrans, matWord;
 	D3DXMatrixScaling(&matScale, m_vSize.x, m_vSize.y, 0.f);
-	D3DXMatrixTranslation(&matTrans, m_vPos.x, m_vPos.y, 0.f);
+	D3DXMatrixTranslation(&matTrans, m_vPos.x + fScrollX, m_vPos.y, 0.f);
 	matWord = matScale * matTrans;
 
 	float fCenterX = (float)(pTexInfo->tImageInfo.Width >> 1);
@@ -80,6 +86,12 @@ void CPlayer::Render()
 void CPlayer::Release()
 {
 	CTexture_Manager::Destroy_Instance();
+}
+
+void CPlayer::Move_Player()
+{
+	m_vPos.x += m_fSpeed;
+	CScrollMgr::Get_Instance()->Set_ScrollX(-m_fSpeed);
 }
 
 void CPlayer::Key_Check()
@@ -138,9 +150,7 @@ void CPlayer::Key_Check()
 void CPlayer::Jumping()
 {
 	float fY = WINCY * 0.5f;
-
 	
-
 	if (m_bJump || m_bDoubleJump)
 	{
 		m_vPos.y = m_fJumpY - (m_fJumpPower * m_fJumpTime - 0.5f * 9.8f * m_fJumpTime * m_fJumpTime);
@@ -156,4 +166,12 @@ void CPlayer::Jumping()
 			m_iMaxJump = 2;
 		}
 	}
+}
+
+void CPlayer::Update_Rect()
+{
+	m_Rect.left = (LONG)(m_vPos.x - 35);
+	m_Rect.right = (LONG)(m_vPos.x + 35);
+	m_Rect.bottom = (LONG)(m_vPos.y + (364 / 2));
+	m_Rect.top = (LONG)(m_Rect.bottom - 140);
 }

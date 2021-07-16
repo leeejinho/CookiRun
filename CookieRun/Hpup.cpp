@@ -27,7 +27,7 @@ void CHpup::Initialize()
 {
 	if (FAILED(CTexture_Manager::Get_Instance()->Insert_Texture(CTexture_Manager::MULTI_TEX, L"../Image/Item/Hp/item08_energy_%d.png", L"Item", L"HpUp",4)))
 		return;
-
+  
 	dwTime = GetTickCount();
 }
 
@@ -62,19 +62,19 @@ void CHpup::Render()
 
 		if (pTexInfo == nullptr)
 			return;
-		float fCenterX = pTexInfo->tImageInfo.Width >> 1;	//ÀÌ¹ÌÁö °¡·Î ±æÀÌ / 2 => ÀÌ¹ÌÁö Áß¾Ó
-		float fCenterY = pTexInfo->tImageInfo.Height >> 1;	//ÀÌ¹ÌÁö ¼¼·Î ±æÀÌ / 2 -> ÀÌ¹ÌÁö Áß¾Ó
+		float fCenterX = pTexInfo->tImageInfo.Width >> 1;	//ì´ë¯¸ì§€ ê°€ë¡œ ê¸¸ì´ / 2 => ì´ë¯¸ì§€ ì¤‘ì•™
+		float fCenterY = pTexInfo->tImageInfo.Height >> 1;	//ì´ë¯¸ì§€ ì„¸ë¡œ ê¸¸ì´ / 2 -> ì´ë¯¸ì§€ ì¤‘ì•™
 
 
 		D3DXMATRIX matScale, matTrans, matWorld;
-		D3DXMatrixScaling(&matScale, 0.5f, 0.5f, 0.f);										//¾ÆÀÌÅÛ Å©±â
-		D3DXMatrixTranslation(&matTrans, m_vPos.x + iScrollX, m_vPos.y + iScrollY, 0.f);	//¾ÆÀÌÅÛ À§Ä¡
+		D3DXMatrixScaling(&matScale, 0.5f, 0.5f, 0.f);										//ì•„ì´í…œ í¬ê¸°
+		D3DXMatrixTranslation(&matTrans, m_vPos.x + iScrollX, m_vPos.y + iScrollY, 0.f);	//ì•„ì´í…œ ìœ„ì¹˜
 		matWorld = matScale * matTrans;
 
 		CGraphic_Device::Get_Instance()->Get_Sprite()->SetTransform(&matWorld);
 		CGraphic_Device::Get_Instance()->Get_Sprite()->Draw(pTexInfo->pTexture, nullptr, &D3DXVECTOR3(fCenterX, fCenterY, 0.f), nullptr, D3DCOLOR_ARGB(255, 255, 255, 255));
 
-	//						  ¿ÞÂÊ						 À§						  ¿À¸¥ÂÊ				 ¾Æ·¡
+	//						  ì™¼ìª½						 ìœ„						  ì˜¤ë¥¸ìª½				 ì•„ëž˜
 		RECT Hpup = { fCenterX - 20 , fCenterY - 20 , fCenterX + 20 ,fCenterY + 20 };
 	//	left , top , right , bottom
 }
