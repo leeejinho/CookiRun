@@ -58,6 +58,7 @@ void CMainGame::Render()
 {
 	CGraphic_Device::Get_Instance()->Render_Begin();
   
+	CSceneMgr::Get_Instance()->Render();
 	m_pPlayer->Render();
 
 	m_pHpup->Render();
@@ -68,7 +69,7 @@ void CMainGame::Render()
 
 	m_pSpeed->Render();
   
- 	CSceneMgr::Get_Instance()->Render();
+
 
   CGraphic_Device::Get_Instance()->Render_End();
 }
