@@ -16,6 +16,8 @@ CMainGame::~CMainGame()
 
 HRESULT CMainGame::Initialize()
 {
+	if (FAILED(CGraphic_Device::Get_Instance()->Ready_Graphic_Device()))
+		return E_FAIL;
 	CSceneMgr::Get_Instance()->Scene_Change(CSceneMgr::STAGE);
 
 

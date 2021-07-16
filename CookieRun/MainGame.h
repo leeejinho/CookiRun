@@ -15,5 +15,7 @@ public:
 	static CMainGame* Create();
 private:
 	CMainGame* m_pPlayer;
+
+
 };
 

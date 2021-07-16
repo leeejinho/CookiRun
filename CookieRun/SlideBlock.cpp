@@ -34,7 +34,7 @@ void CSlideBlock::Late_Update()
 
 void CSlideBlock::Render()
 {
-	const TEXINFO* pTexInfo = CTexture_Manager::Get_Instance()->Get_TexInfo_Texture(L"Block", L"Slide", 0);
+	const TEXINFO* pTexInfo = CTexture_Manager::Get_Instance()->Get_TexInfo_Texture(L"Block", L"Slide", DrawId);
 	if (nullptr == pTexInfo)
 		return;
 

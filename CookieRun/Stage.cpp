@@ -20,8 +20,7 @@ CStage::~CStage()
 
 void CStage::Initialize()
 {
-	if (FAILED(CGraphic_Device::Get_Instance()->Ready_Graphic_Device()))
-		return;
+
 	if (FAILED(CTexture_Manager::Get_Instance()->Insert_Texture(CTexture_Manager::SINGLE_TEX, L"../Image/Background/Background.png", L"Background")))
 		return;
 	if (FAILED(CTexture_Manager::Get_Instance()->Insert_Texture(CTexture_Manager::SINGLE_TEX, L"../Image/Land/Land.png", L"Land")))
@@ -43,17 +42,17 @@ void CStage::Initialize()
 		CObjMgr::Get_Instance()->Add_Object(pLand, OBJID::LAND);
 	}
 
-	pLand = new CSlideBlock(500.f, 100.f, 0);
+	pLand = new CSlideBlock(500.f, 100.f, 1);
 	pLand->Initialize();
 
 	CObjMgr::Get_Instance()->Add_Object(pLand, OBJID::BLOCK);
 
-	pLand = new CJumpBlock(1000.f, 440.f, 0);
+	pLand = new CJumpBlock(1000.f, 440.f, 1);
 	pLand->Initialize();
 
 	CObjMgr::Get_Instance()->Add_Object(pLand, OBJID::BLOCK);
 
-	pLand = new CDjumpBlock(1500.f, 375, 0);
+	pLand = new CDjumpBlock(1500.f, 375.f, 1);
 	pLand->Initialize();
 
 	CObjMgr::Get_Instance()->Add_Object(pLand, OBJID::BLOCK);

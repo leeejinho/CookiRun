@@ -34,7 +34,7 @@ void CJumpBlock::Late_Update()
 
 void CJumpBlock::Render()
 {
-	const TEXINFO* pTexInfo = CTexture_Manager::Get_Instance()->Get_TexInfo_Texture(L"Block", L"Jump", 0);
+	const TEXINFO* pTexInfo = CTexture_Manager::Get_Instance()->Get_TexInfo_Texture(L"Block", L"Jump", DrawId);
 	if (nullptr == pTexInfo)
 		return;
 
