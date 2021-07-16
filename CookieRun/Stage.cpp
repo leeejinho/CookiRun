@@ -40,10 +40,10 @@ void CStage::Initialize()
 
 void CStage::Update()
 {
-	if (CKeyMgr::Get_Instance()->Key_Pressing(VK_RIGHT))
+	/*if (CKeyMgr::Get_Instance()->Key_Pressing(VK_RIGHT))
 		CScrollMgr::Get_Instance()->Set_ScrollX(10.f);
 	if (CKeyMgr::Get_Instance()->Key_Pressing(VK_LEFT))
-		CScrollMgr::Get_Instance()->Set_ScrollX(-10.f);
+		CScrollMgr::Get_Instance()->Set_ScrollX(-10.f);*/
 	if (CKeyMgr::Get_Instance()->Key_Down('Q'))
 		CObjMgr::Get_Instance()->Save_Land();
 	if (CKeyMgr::Get_Instance()->Key_Down('W'))

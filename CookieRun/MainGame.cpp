@@ -10,6 +10,7 @@
 #include "Jelly.h"
 #include "SceneMgr.h"
 #include "KeyMgr.h"
+#include "ObjMgr.h"
 
 CMainGame::CMainGame()
 {
@@ -27,36 +28,34 @@ HRESULT CMainGame::Initialize()
 
  	CSceneMgr::Get_Instance()->Scene_Change(CSceneMgr::STAGE);
   
-	m_pPlayer = new CPlayer;
-	m_pPlayer->Initialize();
+	CObj* pObj = new CPlayer;
+	pObj->Initialize();
+	CObjMgr::Get_Instance()->Add_Object(pObj, OBJID::PLAYER);
 
-	m_pHpup = new CHpup(500.f,100.f);		//���⼭ �ġ ����ֱ�
-	m_pHpup->Initialize();
+	pObj = new CHpup(500.f,100.f);
+	pObj->Initialize();
+	CObjMgr::Get_Instance()->Add_Object(pObj, OBJID::SP);
 
-	m_pGiant = new CGiant(300.f,200.f);		//���⼭ �ġ ����ֱ�
-	m_pGiant->Initialize();
+	pObj = new CGiant(300.f,200.f);
+	pObj->Initialize();
+	CObjMgr::Get_Instance()->Add_Object(pObj, OBJID::GIANT);
 
-	m_pScore = new CScore(500.f,300.f);		//���⼭ �ġ ����ֱ�
-	m_pScore->Initialize();
+	pObj = new CScore(500.f,300.f);
+	pObj->Initialize();
+	CObjMgr::Get_Instance()->Add_Object(pObj, OBJID::HP);
 
-	m_pSpeed = new CSpeed(100.f,500.f);	//���⼭ �ġ ����ֱ�
-	m_pSpeed->Initialize();
+	pObj = new CSpeed(100.f,500.f);
+	pObj->Initialize();
+	CObjMgr::Get_Instance()->Add_Object(pObj, OBJID::SPEED);
 
-	m_pJelly = new CJelly(400.f,200.f);
-	m_pJelly->Initialize();
+	/*m_pJelly = new CJelly(400.f,200.f);
+	m_pJelly->Initialize();*/
 
 	return S_OK;
 }
 
 void CMainGame::Update()
 {
-	m_pPlayer->Update();
-	m_pHpup->Update();
-	m_pGiant->Update();
-	m_pScore->Update();
-	m_pSpeed->Update();
-	m_pJelly->Update();
-
 	CSceneMgr::Get_Instance()->Update();
 	CSceneMgr::Get_Instance()->Late_Update();
 }
@@ -65,18 +64,6 @@ void CMainGame::Render()
 {
 	CGraphic_Device::Get_Instance()->Render_Begin();
   
-	m_pPlayer->Render();	// 364*364
-
-	m_pHpup->Render();		// 90*90
-
-	m_pGiant->Render();		// 90*90
-
-	m_pScore->Render();		// 90*90
-
-	m_pSpeed->Render();		// 90*90
-
-	m_pJelly->Render();		// 40*53
-
 	CSceneMgr::Get_Instance()->Render();
 
   CGraphic_Device::Get_Instance()->Render_End();
