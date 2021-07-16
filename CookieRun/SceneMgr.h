@@ -6,7 +6,7 @@ class CScene;
 class CSceneMgr
 {
 public:
-	enum SCENEID { MENU, STAGE, GAMEOVER, EDIT, END };
+	enum SCENEID { STAGE, END };
 
 private:
 	CSceneMgr();
@@ -15,7 +15,7 @@ public:
 	void Scene_Change(SCENEID _eID);
 	void Update();
 	void Late_Update();
-	void Render(HDC _DC);
+	void Render();
 	void Release();
 public:
 	CScene* Get_Scene() { return m_pScene; }

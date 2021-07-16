@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "SceneMgr.h"
 #include "Scene.h"
+#include "Stage.h"
 
 CSceneMgr* CSceneMgr::m_Instance = nullptr;
 CSceneMgr::CSceneMgr()
@@ -16,7 +17,7 @@ CSceneMgr::~CSceneMgr()
 
 void CSceneMgr::Scene_Change(SCENEID _eID)
 {
-	/*m_eCurScene = _eID;
+	m_eCurScene = _eID;
 
 	if (m_ePreScene != m_eCurScene)
 	{
@@ -24,21 +25,13 @@ void CSceneMgr::Scene_Change(SCENEID _eID)
 
 		switch (m_eCurScene)
 		{
-		case CSceneMgr::MENU:
-			m_pScene = new CMyMenu;
-			break;
 		case CSceneMgr::STAGE:
 			m_pScene = new CStage;
-			break;
-		case CSceneMgr::GAMEOVER:
-			m_pScene = new CEnd;
-			break;
-		case CSceneMgr::EDIT:
 			break;
 		}
 		m_pScene->Initialize();
 		m_ePreScene = m_eCurScene;
-	}*/
+	}
 }
 
 void CSceneMgr::Update()
@@ -51,9 +44,9 @@ void CSceneMgr::Late_Update()
 	m_pScene->Late_Update();
 }
 
-void CSceneMgr::Render(HDC _DC)
+void CSceneMgr::Render()
 {
-	m_pScene->Render(_DC);
+	m_pScene->Render();
 }
 
 void CSceneMgr::Release()

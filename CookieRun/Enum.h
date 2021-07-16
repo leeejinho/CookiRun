@@ -1,5 +1,5 @@
 #pragma once
 namespace OBJID
 {
-	enum ID { PLAYER, ITEM, UI, END };
+	enum ID { LAND, BLOCK ,PLAYER, ITEM, UI, END };
 }

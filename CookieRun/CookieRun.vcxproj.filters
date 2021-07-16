@@ -49,6 +49,24 @@
     <Filter Include="01.Obj\01.Player">
       <UniqueIdentifier>{0d5374c2-f511-49b1-aea7-f49829909fa2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03.Scene\00.Stage">
+      <UniqueIdentifier>{cf70cfba-f8d0-432b-86fc-86c98e376ef1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\Block">
+      <UniqueIdentifier>{1ca364ea-2beb-43dd-9cd8-1fa51373756e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\Block\Land">
+      <UniqueIdentifier>{3037e9cd-53cc-4bee-9c81-2307de6d0a38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\Block\JumpBlock">
+      <UniqueIdentifier>{92c5f52c-a273-423d-bdb6-1554ace06dfa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\Block\DjumpBlock">
+      <UniqueIdentifier>{8a4f4fa6-c3b4-4f7c-9725-5945857555bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\Block\SlideBlock">
+      <UniqueIdentifier>{3ba6fd72-ad17-4789-9bed-f04569122620}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CookieRun.h">
@@ -120,6 +138,24 @@
     <ClInclude Include="Player.h">
       <Filter>01.Obj\01.Player</Filter>
     </ClInclude>
+    <ClInclude Include="Stage.h">
+      <Filter>03.Scene\00.Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Block.h">
+      <Filter>01.Obj\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="Land.h">
+      <Filter>01.Obj\Block\Land</Filter>
+    </ClInclude>
+    <ClInclude Include="DjumpBlock.h">
+      <Filter>01.Obj\Block\DjumpBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="JumpBlock.h">
+      <Filter>01.Obj\Block\JumpBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="SlideBlock.h">
+      <Filter>01.Obj\Block\SlideBlock</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CookieRun.cpp">
@@ -166,6 +202,24 @@
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>01.Obj\01.Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage.cpp">
+      <Filter>03.Scene\00.Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="Block.cpp">
+      <Filter>01.Obj\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="Land.cpp">
+      <Filter>01.Obj\Block\Land</Filter>
+    </ClCompile>
+    <ClCompile Include="DjumpBlock.cpp">
+      <Filter>01.Obj\Block\DjumpBlock</Filter>
+    </ClCompile>
+    <ClCompile Include="JumpBlock.cpp">
+      <Filter>01.Obj\Block\JumpBlock</Filter>
+    </ClCompile>
+    <ClCompile Include="SlideBlock.cpp">
+      <Filter>01.Obj\Block\SlideBlock</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

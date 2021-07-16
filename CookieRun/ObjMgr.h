@@ -14,7 +14,7 @@ public:
 	void Add_Object(CObj* _pObj, OBJID::ID _eID) { m_listObj[_eID].emplace_back(_pObj); }
 	void Update();
 	void Late_Update();
-	void Render(HDC _DC);
+	void Render();
 	void Release();
 
 public:
@@ -36,7 +36,7 @@ private:
 	static CObjMgr*		m_pInstance;
 
 	list<CObj*>			m_listObj[OBJID::END];
-	int			m_iStairMax ;
+	int					m_iStairMax ;
 
 };
 
