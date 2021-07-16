@@ -1,10 +1,14 @@
 #include "stdafx.h"
 #include "MainGame.h"
+
+#include "Player.h"
+#include "Texture_Manager.h"
 #include "Graphic_Device.h"
 #include "Hpup.h"
 #include "Giant.h"
 #include "Score.h"
 #include "Speed.h"
+
 
 CMainGame::CMainGame()
 {
@@ -19,6 +23,10 @@ CMainGame::~CMainGame()
 HRESULT CMainGame::Initialize()
 {
 	CGraphic_Device::Get_Instance()->Ready_Graphic_Device();
+
+	m_pPlayer = new CPlayer;
+	m_pPlayer->Initialize();
+
 	m_pHpup = new CHpup;
 	m_pHpup->Initialize();
 
@@ -37,11 +45,14 @@ HRESULT CMainGame::Initialize()
 
 void CMainGame::Update()
 {
+	m_pPlayer->Update();
 }
 
 void CMainGame::Render()
 {
 	CGraphic_Device::Get_Instance()->Render_Begin();
+  
+	m_pPlayer->Render();
 
 	m_pHpup->Render();
 
@@ -50,13 +61,13 @@ void CMainGame::Render()
 	m_pScore->Render();
 
 	m_pSpeed->Render();
-
+  
 	CGraphic_Device::Get_Instance()->Render_End();
 }
 
 void CMainGame::Release()
 {
-	CGraphic_Device::Get_Instance()->Release_Graphic_Device();
+	CGraphic_Device::Destroy_Instance();
 }
 
 CMainGame * CMainGame::Create()
