@@ -20,6 +20,7 @@ void CHpup::Initialize()
 {
 	if (FAILED(CTexture_Manager::Get_Instance()->Insert_Texture(CTexture_Manager::MULTI_TEX, L"../Image/Item/Hp/item08_energy_%d.png", L"Item", L"HpUp",4)))
 		return;
+	NumTime = GetTickCount();
 }
 
 int CHpup::Update()
@@ -33,16 +34,14 @@ void CHpup::Late_Update()
 
 void CHpup::Render()
 {
-	DWORD Numtime = GetTickCount();
-
-	if (Numtime + 1000 < GetTickCount())
+	if (NumTime + 1000 < GetTickCount())
 	{
 		++iNumber;
 
 		if (iNumber > 3)
 			iNumber = 0;
 
-		Numtime = GetTickCount();
+		NumTime = GetTickCount();
 	}
 
 		const TEXINFO* pTexInfo = CTexture_Manager::Get_Instance()->Get_TexInfo_Texture(L"Item", L"HpUp", iNumber);
@@ -59,10 +58,6 @@ void CHpup::Render()
 
 		CGraphic_Device::Get_Instance()->Get_Sprite()->SetTransform(&matWorld);
 		CGraphic_Device::Get_Instance()->Get_Sprite()->Draw(pTexInfo->pTexture, nullptr, &D3DXVECTOR3(fCenterX, fCenterY, 0.f), nullptr, D3DCOLOR_ARGB(255, 255, 255, 255));
-
-		++iNumber;
-
-	
 }
 
 void CHpup::Release()
