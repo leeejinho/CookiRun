@@ -51,7 +51,7 @@ void CMainGame::Update()
 	m_pHpup->Update();
 	m_pPlayer->Update();
   
-  CSceneMgr::Get_Instance()->Update();
+	CSceneMgr::Get_Instance()->Update();
 	CSceneMgr::Get_Instance()->Late_Update();
 }
 
@@ -59,17 +59,18 @@ void CMainGame::Render()
 {
 	CGraphic_Device::Get_Instance()->Render_Begin();
   
-	m_pPlayer->Render();
+	CSceneMgr::Get_Instance()->Render();
+	//m_pPlayer->Render();
 
-	m_pHpup->Render();
+	//m_pHpup->Render();
 
-	m_pGiant->Render();
+	//m_pGiant->Render();
 
-	m_pScore->Render();
+	//m_pScore->Render();
 
-	m_pSpeed->Render();
+	//m_pSpeed->Render();
   
- 	CSceneMgr::Get_Instance()->Render();
+
 
   CGraphic_Device::Get_Instance()->Render_End();
 }

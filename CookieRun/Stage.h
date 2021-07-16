@@ -14,6 +14,9 @@ public:
 	virtual void Render() override;
 	virtual void Release() override;
 
+public:
+	void Stage1_Test();
+
 private:
 	void Render_Background();
 };
