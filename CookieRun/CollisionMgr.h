@@ -8,7 +8,7 @@ class CCollisionMgr
 public:
 	CCollisionMgr();
 	~CCollisionMgr();
-//
+
 //public:
 //	static D3DXVECTOR3 GetPlayerRX(const CObj* _Player);	//플레이어 오른쪽 X좌표
 //	static D3DXVECTOR3 GetItemLX(const CObj* _Item);		//아이템 왼쪽 X좌표

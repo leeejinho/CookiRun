@@ -5,6 +5,7 @@ class CHpup;
 class CGiant;
 class CScore;
 class CSpeed;
+class CJelly;
 
 class CMainGame final
 {
@@ -26,5 +27,7 @@ private:
 	CGiant*		m_pGiant;
 	CScore*		m_pScore;
 	CSpeed*		m_pSpeed;
+	CJelly*		m_pJelly;
+	
 };
 
