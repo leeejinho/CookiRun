@@ -1,163 +1,145 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="MainGame.cpp">
-      <Filter>00.MainGame</Filter>
-    </ClCompile>
-    <ClCompile Include="Obj.cpp">
-      <Filter>01.Obj</Filter>
-    </ClCompile>
-    <ClCompile Include="Giant.cpp">
-      <Filter>01.Obj\01.Item\00.Giant</Filter>
-    </ClCompile>
-    <ClCompile Include="Hpup.cpp">
-      <Filter>01.Obj\01.Item\01.Hpup</Filter>
-    </ClCompile>
-    <ClCompile Include="JumpBlock.cpp">
-      <Filter>01.Obj\02.Block\00.Jump</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>01.Obj\00.Player</Filter>
-    </ClCompile>
-    <ClCompile Include="Score.cpp">
-      <Filter>01.Obj\01.Item\02.Score</Filter>
-    </ClCompile>
-    <ClCompile Include="Block.cpp">
-      <Filter>01.Obj\02.Block</Filter>
-    </ClCompile>
-    <ClCompile Include="SlideBlock.cpp">
-      <Filter>01.Obj\02.Block\03.Slide</Filter>
-    </ClCompile>
-    <ClCompile Include="DjumpBlock.cpp">
-      <Filter>01.Obj\02.Block\01.Djump</Filter>
-    </ClCompile>
-    <ClCompile Include="Land.cpp">
-      <Filter>01.Obj\02.Block\02.Land</Filter>
-    </ClCompile>
-    <ClCompile Include="Speed.cpp">
-      <Filter>01.Obj\01.Item\03.Speed</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene.cpp">
-      <Filter>02.Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Stage.cpp">
-      <Filter>02.Scene\00.Stage</Filter>
-    </ClCompile>
-    <ClCompile Include="Texture.cpp">
-      <Filter>03.Texture</Filter>
-    </ClCompile>
-    <ClCompile Include="SingleTexture.cpp">
-      <Filter>03.Texture\00.Sigle</Filter>
-    </ClCompile>
-    <ClCompile Include="MultiTexture.cpp">
-      <Filter>03.Texture\01.Multi</Filter>
-    </ClCompile>
     <ClCompile Include="CollisionMgr.cpp">
-      <Filter>98.Manager\00.CollisionMgr</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphic_Device.cpp">
-      <Filter>98.Manager\01.Graphic_Device</Filter>
-    </ClCompile>
-    <ClCompile Include="KeyMgr.cpp">
-      <Filter>98.Manager\02.keyMgr</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjMgr.cpp">
-      <Filter>98.Manager\03.ObjMgr</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneMgr.cpp">
-      <Filter>98.Manager\04.SceneMgr</Filter>
-    </ClCompile>
-    <ClCompile Include="ScrollMgr.cpp">
-      <Filter>98.Manager\05.ScrollMgr</Filter>
-    </ClCompile>
-    <ClCompile Include="Texture_Manager.cpp">
-      <Filter>98.Manager\06.textureMgr</Filter>
+      <Filter>04.Manager\CollisionMgr</Filter>
     </ClCompile>
     <ClCompile Include="CookieRun.cpp">
       <Filter>99.Default</Filter>
     </ClCompile>
+    <ClCompile Include="Giant.cpp">
+      <Filter>01.Obj\00.Item\02.Giant</Filter>
+    </ClCompile>
+    <ClCompile Include="Hpup.cpp">
+      <Filter>01.Obj\00.Item\01.Hpup</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic_Device.cpp">
+      <Filter>04.Manager\Graphic_Device</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyMgr.cpp">
+      <Filter>04.Manager\KeyMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="MainGame.cpp">
+      <Filter>00.MainGame</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiTexture.cpp">
+      <Filter>02.Texture\Multy</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleTexture.cpp">
+      <Filter>02.Texture\Single</Filter>
+    </ClCompile>
+    <ClCompile Include="Obj.cpp">
+      <Filter>01.Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMgr.cpp">
+      <Filter>04.Manager\ObjMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="ScrollMgr.cpp">
+      <Filter>04.Manager\ScrollMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Speed.cpp">
+      <Filter>01.Obj\00.Item\04.Speed</Filter>
+    </ClCompile>
+    <ClCompile Include="Score.cpp">
+      <Filter>01.Obj\00.Item\03.Point</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>01.Obj\01.Player</Filter>
+    </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>99.Default</Filter>
     </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>03.Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMgr.cpp">
+      <Filter>04.Manager\SceneMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture_Manager.cpp">
+      <Filter>04.Manager\TextureMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>02.Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Land.cpp">
+      <Filter>01.Obj\02.Block\00.Land</Filter>
+    </ClCompile>
+    <ClCompile Include="DjumpBlock.cpp">
+      <Filter>01.Obj\02.Block\03.Djump</Filter>
+    </ClCompile>
+    <ClCompile Include="JumpBlock.cpp">
+      <Filter>01.Obj\02.Block\02.Jump</Filter>
+    </ClCompile>
+    <ClCompile Include="SlideBlock.cpp">
+      <Filter>01.Obj\02.Block\01.Slide</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage.cpp">
+      <Filter>03.Scene\00.Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="Block.cpp">
+      <Filter>01.Obj\02.Block</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MainGame.h">
-      <Filter>00.MainGame</Filter>
-    </ClInclude>
-    <ClInclude Include="Obj.h">
-      <Filter>01.Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="Giant.h">
-      <Filter>01.Obj\01.Item\00.Giant</Filter>
-    </ClInclude>
-    <ClInclude Include="Hpup.h">
-      <Filter>01.Obj\01.Item\01.Hpup</Filter>
-    </ClInclude>
-    <ClInclude Include="JumpBlock.h">
-      <Filter>01.Obj\02.Block\00.Jump</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>01.Obj\00.Player</Filter>
-    </ClInclude>
-    <ClInclude Include="Score.h">
-      <Filter>01.Obj\01.Item\02.Score</Filter>
-    </ClInclude>
-    <ClInclude Include="Block.h">
-      <Filter>01.Obj\02.Block</Filter>
-    </ClInclude>
-    <ClInclude Include="SlideBlock.h">
-      <Filter>01.Obj\02.Block\03.Slide</Filter>
-    </ClInclude>
-    <ClInclude Include="DjumpBlock.h">
-      <Filter>01.Obj\02.Block\01.Djump</Filter>
-    </ClInclude>
-    <ClInclude Include="Land.h">
-      <Filter>01.Obj\02.Block\02.Land</Filter>
-    </ClInclude>
-    <ClInclude Include="Speed.h">
-      <Filter>01.Obj\01.Item\03.Speed</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene.h">
-      <Filter>02.Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Stage.h">
-      <Filter>02.Scene\00.Stage</Filter>
-    </ClInclude>
-    <ClInclude Include="Texture.h">
-      <Filter>03.Texture</Filter>
-    </ClInclude>
-    <ClInclude Include="SingleTexture.h">
-      <Filter>03.Texture\00.Sigle</Filter>
-    </ClInclude>
-    <ClInclude Include="MultiTexture.h">
-      <Filter>03.Texture\01.Multi</Filter>
-    </ClInclude>
     <ClInclude Include="CollisionMgr.h">
-      <Filter>98.Manager\00.CollisionMgr</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphic_Device.h">
-      <Filter>98.Manager\01.Graphic_Device</Filter>
-    </ClInclude>
-    <ClInclude Include="KeyMgr.h">
-      <Filter>98.Manager\02.keyMgr</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjMgr.h">
-      <Filter>98.Manager\03.ObjMgr</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneMgr.h">
-      <Filter>98.Manager\04.SceneMgr</Filter>
-    </ClInclude>
-    <ClInclude Include="ScrollMgr.h">
-      <Filter>98.Manager\05.ScrollMgr</Filter>
-    </ClInclude>
-    <ClInclude Include="Texture_Manager.h">
-      <Filter>98.Manager\06.textureMgr</Filter>
+      <Filter>04.Manager\CollisionMgr</Filter>
     </ClInclude>
     <ClInclude Include="CookieRun.h">
       <Filter>99.Default</Filter>
     </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>99.Default</Filter>
+    <ClInclude Include="Define.h">
+      <Filter>98.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Enum.h">
+      <Filter>98.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Extern.h">
+      <Filter>98.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Function.h">
+      <Filter>98.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Giant.h">
+      <Filter>01.Obj\00.Item\02.Giant</Filter>
+    </ClInclude>
+    <ClInclude Include="Hpup.h">
+      <Filter>01.Obj\00.Item\01.Hpup</Filter>
+    </ClInclude>
+    <ClInclude Include="Include.h">
+      <Filter>98.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic_Device.h">
+      <Filter>04.Manager\Graphic_Device</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyMgr.h">
+      <Filter>04.Manager\KeyMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="MainGame.h">
+      <Filter>00.MainGame</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiTexture.h">
+      <Filter>02.Texture\Multy</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleTexture.h">
+      <Filter>02.Texture\Single</Filter>
+    </ClInclude>
+    <ClInclude Include="Obj.h">
+      <Filter>01.Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMgr.h">
+      <Filter>04.Manager\ObjMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="ScrollMgr.h">
+      <Filter>04.Manager\ScrollMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="Speed.h">
+      <Filter>01.Obj\00.Item\04.Speed</Filter>
+    </ClInclude>
+    <ClInclude Include="Score.h">
+      <Filter>01.Obj\00.Item\03.Point</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>01.Obj\01.Player</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>99.Default</Filter>
@@ -165,23 +147,41 @@
     <ClInclude Include="targetver.h">
       <Filter>99.Default</Filter>
     </ClInclude>
-    <ClInclude Include="Define.h">
-      <Filter>97.Include</Filter>
+    <ClInclude Include="Resource.h">
+      <Filter>99.Default</Filter>
     </ClInclude>
-    <ClInclude Include="Enum.h">
-      <Filter>97.Include</Filter>
-    </ClInclude>
-    <ClInclude Include="Extern.h">
-      <Filter>97.Include</Filter>
-    </ClInclude>
-    <ClInclude Include="Function.h">
-      <Filter>97.Include</Filter>
-    </ClInclude>
-    <ClInclude Include="Include.h">
-      <Filter>97.Include</Filter>
+    <ClInclude Include="Scene.h">
+      <Filter>03.Scene</Filter>
     </ClInclude>
     <ClInclude Include="Struct.h">
-      <Filter>97.Include</Filter>
+      <Filter>98.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMgr.h">
+      <Filter>04.Manager\SceneMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture_Manager.h">
+      <Filter>04.Manager\TextureMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>02.Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Land.h">
+      <Filter>01.Obj\02.Block\00.Land</Filter>
+    </ClInclude>
+    <ClInclude Include="DjumpBlock.h">
+      <Filter>01.Obj\02.Block\03.Djump</Filter>
+    </ClInclude>
+    <ClInclude Include="JumpBlock.h">
+      <Filter>01.Obj\02.Block\02.Jump</Filter>
+    </ClInclude>
+    <ClInclude Include="SlideBlock.h">
+      <Filter>01.Obj\02.Block\01.Slide</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage.h">
+      <Filter>03.Scene\00.Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Block.h">
+      <Filter>01.Obj\02.Block</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -194,88 +194,88 @@
   </ItemGroup>
   <ItemGroup>
     <Filter Include="00.MainGame">
-      <UniqueIdentifier>{a5bff12d-173c-41d2-ae1c-fa4c83bfc1d9}</UniqueIdentifier>
+      <UniqueIdentifier>{11d34f90-50f1-4aae-a461-39ae899e7efd}</UniqueIdentifier>
     </Filter>
     <Filter Include="01.Obj">
-      <UniqueIdentifier>{4d89620c-8f70-42ae-9fcb-ec797b9538a3}</UniqueIdentifier>
+      <UniqueIdentifier>{810933dc-51b7-4a30-9b72-22f19088fc7f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="01.Obj\00.Player">
-      <UniqueIdentifier>{3bc05efd-2032-4e9a-a538-2abcca6f8e9b}</UniqueIdentifier>
+    <Filter Include="02.Texture">
+      <UniqueIdentifier>{24cfea32-c1c7-4ae2-b50a-6f49009bee73}</UniqueIdentifier>
     </Filter>
-    <Filter Include="01.Obj\01.Item">
-      <UniqueIdentifier>{b7250322-7d6c-4708-a5bd-02649b76c5fd}</UniqueIdentifier>
+    <Filter Include="04.Manager">
+      <UniqueIdentifier>{e6994c28-bc2c-48b9-b54d-9b54f68af78f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="01.Obj\01.Item\00.Giant">
-      <UniqueIdentifier>{71578c23-ac68-4c71-8cd0-1b24652dde27}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01.Obj\01.Item\01.Hpup">
-      <UniqueIdentifier>{ea87ed95-8f64-4860-aeba-272a5d44e6c1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01.Obj\01.Item\02.Score">
-      <UniqueIdentifier>{2afbdc70-a662-48f3-9226-7c631676f64f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01.Obj\01.Item\03.Speed">
-      <UniqueIdentifier>{b483180d-8dcf-4717-a0f8-0f40ea97f29a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01.Obj\02.Block">
-      <UniqueIdentifier>{fc60ec51-087e-48fe-89e7-3c0a4459de54}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01.Obj\02.Block\00.Jump">
-      <UniqueIdentifier>{9eca03b5-08b1-4765-b22d-935ecb22eb6f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01.Obj\02.Block\01.Djump">
-      <UniqueIdentifier>{598008c5-9c4e-4270-971d-cdb21aa3eaeb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01.Obj\02.Block\03.Slide">
-      <UniqueIdentifier>{8134eb41-060c-4719-926e-5611dec5218c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01.Obj\02.Block\02.Land">
-      <UniqueIdentifier>{bae4e8e1-73c2-408a-bbea-e3600bf00473}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02.Scene">
-      <UniqueIdentifier>{40ef16d5-fb21-429e-b9b9-5adab028db6a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02.Scene\00.Stage">
-      <UniqueIdentifier>{40d7e865-f908-4f5c-a5d3-5afb90297e70}</UniqueIdentifier>
+    <Filter Include="98.Headers">
+      <UniqueIdentifier>{6fb47d1f-a492-4adc-a033-bb6cd0df54c0}</UniqueIdentifier>
     </Filter>
     <Filter Include="99.Default">
-      <UniqueIdentifier>{cf8a3ae1-b0de-42ae-a098-e051adc224c0}</UniqueIdentifier>
+      <UniqueIdentifier>{1aee68e2-7e5f-4189-b57e-59e22f44065e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="98.Manager">
-      <UniqueIdentifier>{5e87755f-0a51-4e3e-981f-1eff6e4cb46f}</UniqueIdentifier>
+    <Filter Include="03.Scene">
+      <UniqueIdentifier>{aa0279b4-a18f-4446-8e3c-175982ccc0ff}</UniqueIdentifier>
     </Filter>
-    <Filter Include="98.Manager\00.CollisionMgr">
-      <UniqueIdentifier>{5b90f37b-d584-4532-a85e-f3905478e575}</UniqueIdentifier>
+    <Filter Include="01.Obj\00.Item">
+      <UniqueIdentifier>{92134136-4793-400b-bc0e-fefce20937c5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="98.Manager\01.Graphic_Device">
-      <UniqueIdentifier>{cbfb7805-d33e-4148-8c5e-a32d7ec82a1b}</UniqueIdentifier>
+    <Filter Include="01.Obj\01.Player">
+      <UniqueIdentifier>{8990bd3d-7f6c-4156-815d-209afb6f1ce7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="98.Manager\02.keyMgr">
-      <UniqueIdentifier>{d5cb8322-c6b8-46f4-b581-c928c1e056a5}</UniqueIdentifier>
+    <Filter Include="02.Texture\Multy">
+      <UniqueIdentifier>{1f23dc30-4a7b-4962-b38a-dbd723151706}</UniqueIdentifier>
     </Filter>
-    <Filter Include="98.Manager\03.ObjMgr">
-      <UniqueIdentifier>{8fe2a613-cb23-4393-ab3e-c89c70b59e3c}</UniqueIdentifier>
+    <Filter Include="02.Texture\Single">
+      <UniqueIdentifier>{36545830-2006-473e-be1b-c2c33fbd1d3d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="98.Manager\04.SceneMgr">
-      <UniqueIdentifier>{97f5fd98-2c6b-4370-baa6-17b3b9686635}</UniqueIdentifier>
+    <Filter Include="04.Manager\CollisionMgr">
+      <UniqueIdentifier>{3f5399aa-3284-4e02-8068-08d2491b7445}</UniqueIdentifier>
     </Filter>
-    <Filter Include="98.Manager\05.ScrollMgr">
-      <UniqueIdentifier>{d66b30d2-0486-449f-bfb4-52a542273681}</UniqueIdentifier>
+    <Filter Include="04.Manager\Graphic_Device">
+      <UniqueIdentifier>{f95dcc5f-ad01-4271-91cc-c0583127ea21}</UniqueIdentifier>
     </Filter>
-    <Filter Include="98.Manager\06.textureMgr">
-      <UniqueIdentifier>{49d82c08-7b37-4bfc-90f0-60c1851b20e5}</UniqueIdentifier>
+    <Filter Include="04.Manager\KeyMgr">
+      <UniqueIdentifier>{4a1d8cc3-17d2-4a66-97c3-99c2fbbd1942}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03.Texture">
-      <UniqueIdentifier>{83ddf895-f7b1-4df3-a992-d54c3912bd72}</UniqueIdentifier>
+    <Filter Include="04.Manager\ObjMgr">
+      <UniqueIdentifier>{f7a08f27-4f34-4a4d-a352-b6c3011b905d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03.Texture\00.Sigle">
-      <UniqueIdentifier>{e742f5c8-aaea-454a-97c7-448066f9c1fe}</UniqueIdentifier>
+    <Filter Include="04.Manager\SceneMgr">
+      <UniqueIdentifier>{3b8c64c4-991d-4804-9632-87dcc6d60ea4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03.Texture\01.Multi">
-      <UniqueIdentifier>{b31493d0-bdac-4ee3-aaad-90ac76ce9bbf}</UniqueIdentifier>
+    <Filter Include="04.Manager\ScrollMgr">
+      <UniqueIdentifier>{717124b8-4f14-43b2-abc9-34d3df7dd0ce}</UniqueIdentifier>
     </Filter>
-    <Filter Include="97.Include">
-      <UniqueIdentifier>{6f18803c-4d78-4ac2-9a43-eceafff636c2}</UniqueIdentifier>
+    <Filter Include="04.Manager\TextureMgr">
+      <UniqueIdentifier>{80210b38-9ed0-4ddb-8170-b1452e8cba34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\00.Item\01.Hpup">
+      <UniqueIdentifier>{17c95ab5-3e5a-4142-8c63-fa5111771906}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\00.Item\02.Giant">
+      <UniqueIdentifier>{e078de5f-70c0-4c4a-9fa8-a90d9a37a061}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\00.Item\03.Point">
+      <UniqueIdentifier>{666f809f-d9b2-4392-b7c8-314a0a41cb2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\00.Item\04.Speed">
+      <UniqueIdentifier>{be87395f-ec1d-4423-bffa-1ada9a8ea8ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\02.Block">
+      <UniqueIdentifier>{435db660-6cb1-4dc3-8347-51023d2b4f87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\02.Block\00.Land">
+      <UniqueIdentifier>{4d0af2f9-4aa1-4aa9-bd00-98e0887af5b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\02.Block\01.Slide">
+      <UniqueIdentifier>{2426a5ae-30da-45e5-9f26-7f02dde3b5e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\02.Block\02.Jump">
+      <UniqueIdentifier>{787d57e9-e65b-4f2f-9a53-afc3885a0616}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\02.Block\03.Djump">
+      <UniqueIdentifier>{33a8d352-c46d-4a7f-a136-e2afc1e22ff8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Scene\00.Stage">
+      <UniqueIdentifier>{068373d3-1f40-46f2-89d5-630eaed9678a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

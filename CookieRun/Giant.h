@@ -7,6 +7,7 @@ class CGiant :	public CObj
 {
 public:
 	CGiant();
+	CGiant(float TexInfoX, float TexInfoY);
 	virtual ~CGiant();
 
 public:
@@ -17,6 +18,7 @@ public:
 	virtual void Release() override;
 private:
 	int iNumber;
+	DWORD dwTime;
 };
 
 #endif // !__CGIANT_H__

@@ -1,23 +1,17 @@
 #pragma once
-#include "Scene.h"
-class CStage :
-	public CScene
+#include "Obj.h"
+class CJelly :	public CObj
 {
 public:
-	CStage();
-	~CStage();
+	CJelly();
+	CJelly(float TexInfoX, float TexInfoY);
+	virtual ~CJelly();
 
 public:
 	virtual void Initialize() override;
-	virtual void Update() override;
+	virtual int Update() override;
 	virtual void Late_Update() override;
 	virtual void Render() override;
 	virtual void Release() override;
-
-public:
-	void Stage1_Test();
-
-private:
-	void Render_Background();
 };
 

@@ -5,6 +5,8 @@
 CObj::CObj()
 	:m_bDead(false)
 {
+	ZeroMemory(&m_vPos, sizeof(D3DXVECTOR3));
+	ZeroMemory(&m_vSize, sizeof(D3DXVECTOR3));
 }
 
 CObj::~CObj()

@@ -7,6 +7,7 @@ class CHpup :	public CObj
 {
 public:
 	CHpup();
+	CHpup(float TexInfoX , float TexInfoY);
 	virtual ~CHpup();
 
 public:
@@ -18,7 +19,7 @@ public:
 
 private:
 	int iNumber;
-	DWORD NumTime;
+	DWORD dwTime;
 };
 
 #endif // !__CHPUP_H__

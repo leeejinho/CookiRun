@@ -7,6 +7,7 @@ class CSpeed : 	public CObj
 {
 public:
 	CSpeed();
+	CSpeed(float TexInfoX, float TexInfoY);
 	virtual ~CSpeed();
 
 public:
@@ -17,6 +18,7 @@ public:
 	virtual void Release() override;
 private:
 	int iNumber;
+	DWORD dwTime;
 };
 
 #endif // !__CSPEED_H__

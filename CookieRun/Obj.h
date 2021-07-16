@@ -20,6 +20,8 @@ public:
 protected:
 	bool		m_bDead;
 	TEXINFO		m_TexInfo;
+	D3DXVECTOR3		m_vPos;
+	D3DXVECTOR3		m_vSize;
 };
 
 #endif // !__OBJ_H__
