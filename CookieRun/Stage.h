@@ -1,5 +1,7 @@
 #pragma once
 #include "Scene.h"
+
+class CStage_Setting;
 class CStage :
 	public CScene
 {
@@ -14,10 +16,9 @@ public:
 	virtual void Render() override;
 	virtual void Release() override;
 
-public:
-	void Stage1_Test();
 
 private:
 	void Render_Background();
+	CStage_Setting* Stage_Set;
 };
 

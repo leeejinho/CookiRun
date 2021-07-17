@@ -2,20 +2,20 @@
 #include "Stage.h"
 #include "Texture_Manager.h"
 #include "ObjMgr.h"
-#include "Land.h"
 #include "KeyMgr.h"
 #include "ScrollMgr.h"
-#include "DjumpBlock.h"
-#include "JumpBlock.h"
-#include "SlideBlock.h"
+
+#include "Stage_Setting.h"
 
 CStage::CStage()
+	:Stage_Set(nullptr)
 {
 }
 
 
 CStage::~CStage()
 {
+	Release();
 }
 
 void CStage::Initialize()
@@ -33,23 +33,30 @@ void CStage::Initialize()
 		return;
 
 
-	///////미니맵 테스트
-	Stage1_Test();
+	///////seokwon Test
+	if (Stage_Set == nullptr)
+		Stage_Set = new CStage_Setting;
+	Stage_Set->stage1_Setting();
+
+	CScrollMgr::Get_Instance()->Set_ScrollX(-7000.f);
+	///////seokwon Test
 
 }
 
 void CStage::Update()
 {
-	/*if (CKeyMgr::Get_Instance()->Key_Pressing(VK_RIGHT))
-		CScrollMgr::Get_Instance()->Set_ScrollX(10.f);
+	///////seokwon Test
+	if (CKeyMgr::Get_Instance()->Key_Pressing(VK_RIGHT))
+		CScrollMgr::Get_Instance()->Set_ScrollX(-5.f);
 	if (CKeyMgr::Get_Instance()->Key_Pressing(VK_LEFT))
-		CScrollMgr::Get_Instance()->Set_ScrollX(-10.f);*/
+		CScrollMgr::Get_Instance()->Set_ScrollX(+5.f);
 	if (CKeyMgr::Get_Instance()->Key_Down('Q'))
 		CObjMgr::Get_Instance()->Save_Land();
 	if (CKeyMgr::Get_Instance()->Key_Down('W'))
 		CObjMgr::Get_Instance()->Save_Block();
 	if (CKeyMgr::Get_Instance()->Key_Down('E'))
 		CObjMgr::Get_Instance()->Load();
+	///////seokwon Test
 
 	CObjMgr::Get_Instance()->Update();
 }
@@ -67,38 +74,9 @@ void CStage::Render()
 
 void CStage::Release()
 {
+	SAFE_DELETE(Stage_Set);
 }
 
-void CStage::Stage1_Test()
-{
-	CObj* pLand = nullptr;
-
-	for (int i = 0; i < 150; ++i)
-	{
-		pLand = new CLand(124.f * i + 62.f, 565.f);
-		pLand->Initialize();
-
-		CObjMgr::Get_Instance()->Add_Object(pLand, OBJID::LAND);
-	}
-
-	pLand = new CJumpBlock(1500.f, 440.f, 1);
-	pLand->Initialize();
-
-	CObjMgr::Get_Instance()->Add_Object(pLand, OBJID::BLOCK);
-
-
-	//pLand = new CSlideBlock(500.f, 100.f, 1);
-	//pLand->Initialize();
-
-	//CObjMgr::Get_Instance()->Add_Object(pLand, OBJID::BLOCK);
-
-
-
-	//pLand = new CDjumpBlock(1500.f, 375.f, 1);
-	//pLand->Initialize();
-
-	//CObjMgr::Get_Instance()->Add_Object(pLand, OBJID::BLOCK);
-}
 
 void CStage::Render_Background()
 {

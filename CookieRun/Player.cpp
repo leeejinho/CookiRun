@@ -28,7 +28,11 @@ void CPlayer::Initialize()
 	CTexture_Manager::Get_Instance()->Insert_Texture(CTexture_Manager::MULTI_TEX, L"../Texture/Player/Hit/cookie0001_hit0%d.png", L"Player", L"Hit", 3);
 	CTexture_Manager::Get_Instance()->Insert_Texture(CTexture_Manager::MULTI_TEX, L"../Texture/Player/Dead/cookie0001_dead0%d.png", L"Player", L"Dead", 5);
 
-	m_vPos = { 200.f, WINCY * 0.5f, 0.f };
+	// seokwon test
+	m_vPos = { 7200.f,WINCY*0.5f , 0.f };
+	// seokwon test
+	
+	//m_vPos = { 200.f, WINCY * 0.5f, 0.f };
 	m_vSize = { 1.f, 1.f, 0.f };
 	m_iDrawID = 0;
 
@@ -89,14 +93,21 @@ void CPlayer::Release()
 
 void CPlayer::Move_Player()
 {
-	m_vPos.x += m_fSpeed;
-	CScrollMgr::Get_Instance()->Set_ScrollX(-m_fSpeed);
-	m_vPos.y += m_fSpeed;
+	//m_vPos.x += m_fSpeed;
+	//CScrollMgr::Get_Instance()->Set_ScrollX(-m_fSpeed);
+	
+	//seokwon test
+	if (CKeyMgr::Get_Instance()->Key_Pressing(VK_RIGHT))
+		m_vPos.x += 5.f;
+	if (CKeyMgr::Get_Instance()->Key_Pressing(VK_LEFT))
+		m_vPos.x -= 5.f;
+	//seokwon test
 }
 
 void CPlayer::Key_Check()
 {
-	if (CKeyMgr::Get_Instance()->Key_Pressing(VK_RIGHT) && !m_bJump)
+	//if (CKeyMgr::Get_Instance()->Key_Pressing(VK_RIGHT) && !m_bJump)
+	if (CKeyMgr::Get_Instance()->Key_Pressing('Z') && !m_bJump)		//////////////////////seokwon test
 	{
 		if (!m_bSlide)
 			m_iDrawID = 0;
@@ -104,7 +115,8 @@ void CPlayer::Key_Check()
 		m_pStateKey = L"Slide";
 		m_iMaxDrawID = 1;
 	}
-	else if (CKeyMgr::Get_Instance()->Key_Down(VK_LEFT) && !m_bSlide && m_iMaxJump > 0)
+	//else if (CKeyMgr::Get_Instance()->Key_Down(VK_LEFT) && !m_bSlide && m_iMaxJump > 0)
+	else if (CKeyMgr::Get_Instance()->Key_Down('X') && !m_bSlide && m_iMaxJump > 0)     //////////////////////seokwon test
 	{
 		if (!m_bJump)
 		{
