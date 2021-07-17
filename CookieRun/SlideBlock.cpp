@@ -15,7 +15,7 @@ CSlideBlock::CSlideBlock(float _fX, float _fY, DWORD _DrawId)
 	m_eType = SLIDE;
 
 	m_vSize.x = 184;
-	m_vSize.y = 638;
+	m_vSize.y = 630;
 }
 
 
@@ -54,7 +54,7 @@ void CSlideBlock::Render()
 
 	D3DXMATRIX matScale, matTrans, matWorld;
 	D3DXMatrixScaling(&matScale, 1.f, 1.f, 0.f);
-	D3DXMatrixTranslation(&matTrans, m_vPos.x - ScrollX, m_vPos.y, 0.f);
+	D3DXMatrixTranslation(&matTrans, m_vPos.x + ScrollX, m_vPos.y, 0.f);
 	matWorld = matScale * matTrans;
 	CGraphic_Device::Get_Instance()->Get_Sprite()->SetTransform(&matWorld);
 	CGraphic_Device::Get_Instance()->Get_Sprite()->Draw(pTexInfo->pTexture, nullptr, &D3DXVECTOR3(fCenterX, fCenterY, 0.f), nullptr, D3DCOLOR_ARGB(255, 255, 255, 255));

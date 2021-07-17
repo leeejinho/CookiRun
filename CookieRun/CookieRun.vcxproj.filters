@@ -79,6 +79,12 @@
     <ClCompile Include="Block.cpp">
       <Filter>01.Obj\02.Block</Filter>
     </ClCompile>
+    <ClCompile Include="Jelly.cpp">
+      <Filter>01.Obj\00.Item\05.Jelly</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage_Setting.cpp">
+      <Filter>04.Manager\StageSetting</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CollisionMgr.h">
@@ -183,6 +189,12 @@
     <ClInclude Include="Block.h">
       <Filter>01.Obj\02.Block</Filter>
     </ClInclude>
+    <ClInclude Include="Jelly.h">
+      <Filter>01.Obj\00.Item\05.Jelly</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage_Setting.h">
+      <Filter>04.Manager\StageSetting</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="CookieRun.ico">
@@ -276,6 +288,12 @@
     </Filter>
     <Filter Include="03.Scene\00.Stage">
       <UniqueIdentifier>{068373d3-1f40-46f2-89d5-630eaed9678a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\00.Item\05.Jelly">
+      <UniqueIdentifier>{3c1dd3a5-adbe-4446-8f3c-721d566a8a1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04.Manager\StageSetting">
+      <UniqueIdentifier>{b1bdc231-55af-4920-bc62-f36e9a5ce7aa}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
