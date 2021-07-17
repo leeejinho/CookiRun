@@ -79,6 +79,7 @@
     <ClCompile Include="Block.cpp">
       <Filter>01.Obj\02.Block</Filter>
     </ClCompile>
+    <ClCompile Include="Hpbar.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CollisionMgr.h">
@@ -183,6 +184,7 @@
     <ClInclude Include="Block.h">
       <Filter>01.Obj\02.Block</Filter>
     </ClInclude>
+    <ClInclude Include="Hpbar.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="CookieRun.ico">
@@ -276,6 +278,9 @@
     </Filter>
     <Filter Include="03.Scene\00.Stage">
       <UniqueIdentifier>{068373d3-1f40-46f2-89d5-630eaed9678a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\03.UI">
+      <UniqueIdentifier>{cf796ddb-b05c-4f46-9888-bbbff3f08aa8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

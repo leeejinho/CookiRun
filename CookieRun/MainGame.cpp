@@ -11,6 +11,7 @@
 #include "SceneMgr.h"
 #include "KeyMgr.h"
 #include "ObjMgr.h"
+#include "Hpbar.h"
 
 CMainGame::CMainGame()
 {
@@ -48,6 +49,10 @@ HRESULT CMainGame::Initialize()
 	pObj->Initialize();
 	CObjMgr::Get_Instance()->Add_Object(pObj, OBJID::SPEED);
 
+	pObj = new CHpbar;
+	pObj->Initialize();
+	CObjMgr::Get_Instance()->Add_Object(pObj, OBJID::UI);
+
 	/*m_pJelly = new CJelly(400.f,200.f);
 	m_pJelly->Initialize();*/
 
@@ -71,9 +76,10 @@ void CMainGame::Render()
 
 void CMainGame::Release()
 {
-	CGraphic_Device::Destroy_Instance();
-  CSceneMgr::Destroy_Instance();
+	CTexture_Manager::Destroy_Instance();
+	CSceneMgr::Destroy_Instance();
 	CKeyMgr::Destroy_Instance();
+	CGraphic_Device::Destroy_Instance();
 }
 
 CMainGame * CMainGame::Create()

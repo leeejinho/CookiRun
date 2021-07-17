@@ -5,12 +5,10 @@
 #include "ScrollMgr.h"
 
 CPlayer::CPlayer()
-	: m_dwDelay(0), m_iDrawID(0), m_iMaxDrawID(0), m_pStateKey(L""), m_bSlide(false),
+	: m_dwTexDelay(0), m_iDrawID(0), m_iMaxDrawID(0), m_pStateKey(L""), m_bSlide(false),
 	m_fJumpPower(0.f), m_fJumpTime(0.f), m_fJumpY(0.f), m_bJump(false), m_bDoubleJump(false), m_iMaxJump(0),
-	m_fSpeed(0.f)
+	m_fSpeed(0.f), m_iHp(0), m_dwHpDelay(GetTickCount())
 {
-	ZeroMemory(&m_vPos, sizeof(D3DXVECTOR3));
-	ZeroMemory(&m_vSize, sizeof(D3DXVECTOR3));
 	ZeroMemory(&m_Rect, sizeof(RECT));
 }	  
 
@@ -37,18 +35,21 @@ void CPlayer::Initialize()
 	m_fJumpPower = 50.f;
 	m_iMaxJump = 2;
 	m_fSpeed = 5.f;
-
+	m_iHp = 100;
 }
 
 int CPlayer::Update()
 {
-	if (m_bDead)
-		return OBJ_DEAD;
+	if (!m_bDead)
+	{
+		//if (m_iDrawID == 4)
+			//return OBJ_DEAD;
 
-	Move_Player();
-	Key_Check();
-	Jumping();
-
+		Move_Player();
+		Key_Check();
+		Jumping();
+		Update_Hp();
+	}
 	return OBJ_NOENVENT;
 }
 
@@ -58,7 +59,7 @@ void CPlayer::Late_Update()
 
 void CPlayer::Render()
 {
-	if (m_dwDelay + 60 < GetTickCount())
+	if (m_dwTexDelay + 60 < GetTickCount())
 	{
 		++m_iDrawID;
 		if (m_iDrawID > m_iMaxDrawID)
@@ -66,8 +67,10 @@ void CPlayer::Render()
 			m_iDrawID = 0;
 			if (m_pStateKey == L"DoubleJump")
 				m_iDrawID = 9;
+			else if (m_bDead)
+				m_iDrawID = 4;
 		}
-		m_dwDelay = GetTickCount();
+		m_dwTexDelay = GetTickCount();
 	}
 	float fScrollX = CScrollMgr::Get_Instance()->Get_ScrollX();
 	const TEXINFO* pTexInfo = CTexture_Manager::Get_Instance()->Get_TexInfo_Texture(L"Player", m_pStateKey, m_iDrawID);	
@@ -85,7 +88,6 @@ void CPlayer::Render()
 
 void CPlayer::Release()
 {
-	CTexture_Manager::Destroy_Instance();
 }
 
 void CPlayer::Move_Player()
@@ -136,15 +138,13 @@ void CPlayer::Key_Check()
 			m_iMaxDrawID = 9;
 		}
 	}
-	else if (!m_bJump && !m_bDoubleJump)
+	else if (!m_bJump && !m_bDoubleJump && !m_bDead)
 	{
 		m_bSlide = false;
 		m_pStateKey = L"Run";
 		m_iMaxDrawID = 3;
 
-	}
-
-	
+	}	
 }
 
 void CPlayer::Jumping()
@@ -174,4 +174,28 @@ void CPlayer::Update_Rect()
 	m_Rect.right = (LONG)(m_vPos.x + 35);
 	m_Rect.bottom = (LONG)(m_vPos.y + (364 / 2));
 	m_Rect.top = (LONG)(m_Rect.bottom - 140);
+}
+
+void CPlayer::Update_Hp()
+{
+	if (m_iHp <= 0)
+	{
+		if (!m_bDead)
+		{
+			m_iDrawID = 0;
+			m_iHp = 0;
+		}
+
+		m_bDead = true;
+		m_pStateKey = L"Dead";
+		m_iMaxDrawID = 4;
+	}
+	else
+	{
+		if (m_dwHpDelay + 100 < GetTickCount())
+		{
+			--m_iHp;
+			m_dwHpDelay = GetTickCount();
+		}
+	}
 }
