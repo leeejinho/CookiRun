@@ -79,6 +79,7 @@
     <ClCompile Include="Block.cpp">
       <Filter>01.Obj\02.Block</Filter>
     </ClCompile>
+    <ClCompile Include="Hpbar.cpp" />
     <ClCompile Include="Jelly.cpp">
       <Filter>01.Obj\00.Item\05.Jelly</Filter>
     </ClCompile>
@@ -189,6 +190,7 @@
     <ClInclude Include="Block.h">
       <Filter>01.Obj\02.Block</Filter>
     </ClInclude>
+    <ClInclude Include="Hpbar.h" />
     <ClInclude Include="Jelly.h">
       <Filter>01.Obj\00.Item\05.Jelly</Filter>
     </ClInclude>
@@ -289,6 +291,8 @@
     <Filter Include="03.Scene\00.Stage">
       <UniqueIdentifier>{068373d3-1f40-46f2-89d5-630eaed9678a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01.Obj\03.UI">
+      <UniqueIdentifier>{cf796ddb-b05c-4f46-9888-bbbff3f08aa8}</UniqueIdentifier>
     <Filter Include="04.Manager\LineMgr">
       <UniqueIdentifier>{c10fcd98-7dc7-4bfc-b431-b2c41747b2ae}</UniqueIdentifier>
     <Filter Include="01.Obj\00.Item\05.Jelly">
