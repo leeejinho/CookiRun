@@ -34,31 +34,34 @@ int CJelly::Update()
 
 void CJelly::Late_Update()
 {
-	int iScrollX = (int)CScrollMgr::Get_Instance()->Get_ScrollX();
-	int iScrollY = (int)CScrollMgr::Get_Instance()->Get_ScrollY();
-
-	const TEXINFO* pTexInfo = CTexture_Manager::Get_Instance()->Get_TexInfo_Texture(L"Jelly");
-
-	if (pTexInfo == nullptr)
-		return;
-	float fCenterX = float(pTexInfo->tImageInfo.Width >> 1);
-	float fCenterY = float(pTexInfo->tImageInfo.Height >> 1);
-
-	D3DXMATRIX matScale, matTrans, matWorld;
-	D3DXMatrixScaling(&matScale, 0.5f, 0.5f, 0.f);											//아이템 크기
-	D3DXMatrixTranslation(&matTrans, m_vPos.x + iScrollX, m_vPos.x + iScrollY, 0.f);		//아이템 위치
-	matWorld = matScale * matTrans;
-
-	CGraphic_Device::Get_Instance()->Get_Sprite()->SetTransform(&matWorld);
-	CGraphic_Device::Get_Instance()->Get_Sprite()->Draw(pTexInfo->pTexture, nullptr, &D3DXVECTOR3(fCenterX, fCenterY, 0.f), nullptr, D3DCOLOR_ARGB(255, 255, 255, 255));
-
-	//						  왼쪽						 위						  오른쪽				 아래
-	RECT Hpup = { fCenterX - 20, fCenterY - 20 , fCenterX + 20, fCenterY + 20};
-	//	left , top , right , bottom
+	
 }
 
 void CJelly::Render()
 {
+
+	int iScrollX = (int)CScrollMgr::Get_Instance()->Get_ScrollX();
+
+	//if (iScrollX + m_vPos.x > -100 && iScrollX + m_vPos.x < 900)
+	//{
+		const TEXINFO* pTexInfo = CTexture_Manager::Get_Instance()->Get_TexInfo_Texture(L"Jelly");
+
+		if (pTexInfo == nullptr)
+			return;
+		float fCenterX = float(pTexInfo->tImageInfo.Width >> 1);
+		float fCenterY = float(pTexInfo->tImageInfo.Height >> 1);
+
+		D3DXMATRIX matScale, matTrans, matWorld;											//아이템 크기
+		D3DXMatrixTranslation(&matTrans, m_vPos.x + iScrollX, m_vPos.y, 0.f);		//아이템 위치
+
+
+		CGraphic_Device::Get_Instance()->Get_Sprite()->SetTransform(&matTrans);
+		CGraphic_Device::Get_Instance()->Get_Sprite()->Draw(pTexInfo->pTexture, nullptr, &D3DXVECTOR3(fCenterX, fCenterY, 0.f), nullptr, D3DCOLOR_ARGB(255, 255, 255, 255));
+
+		//						  왼쪽						 위						  오른쪽				 아래
+		RECT Hpup = { fCenterX - 20, fCenterY - 20 , fCenterX + 20, fCenterY + 20 };
+		//	left , top , right , bottom
+	//}
 }
 
 void CJelly::Release()
