@@ -168,6 +168,7 @@
     <ClInclude Include="Giant.h" />
     <ClInclude Include="Graphic_Device.h" />
     <ClInclude Include="Hpbar.h" />
+    <ClInclude Include="Jelly.h" />
     <ClInclude Include="JumpBlock.h" />
     <ClInclude Include="Hpup.h" />
     <ClInclude Include="KeyMgr.h" />
@@ -186,6 +187,7 @@
     <ClInclude Include="SlideBlock.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="Speed.h" />
+    <ClInclude Include="Stage_Setting.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Struct.h" />
     <ClInclude Include="targetver.h" />
@@ -197,6 +199,7 @@
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="DjumpBlock.cpp" />
     <ClCompile Include="Hpbar.cpp" />
+    <ClCompile Include="Jelly.cpp" />
     <ClCompile Include="JumpBlock.cpp" />
     <ClCompile Include="CollisionMgr.cpp" />
     <ClCompile Include="CookieRun.cpp" />
@@ -218,6 +221,7 @@
     <ClCompile Include="SlideBlock.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="Speed.cpp" />
+    <ClCompile Include="Stage_Setting.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

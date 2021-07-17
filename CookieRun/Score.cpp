@@ -72,7 +72,7 @@ void CScore::Render()
 	CGraphic_Device::Get_Instance()->Get_Sprite()->Draw(pTexInfo->pTexture, nullptr, &D3DXVECTOR3(fCenterX, fCenterY, 0.f), nullptr, D3DCOLOR_ARGB(255, 255, 255, 255));
 
 	//						  왼쪽						 위						  오른쪽				 아래
-	RECT Hpup = { fCenterX - 20 , fCenterY - 20 , fCenterX + 20 ,fCenterY + 20 };
+	m_tRect = { LONG(m_vPos.x - 20) ,LONG(m_vPos.y - 20) , LONG(m_vPos.x + 20) , LONG(m_vPos.y + 20) };
 	//	left , top , right , bottom
 }
 

@@ -27,7 +27,6 @@ private:
 private:
 	DWORD		m_dwTexDelay;
 	WCHAR*		m_pStateKey;
-	RECT		m_Rect;
 
 	bool		m_bSlide;
 
