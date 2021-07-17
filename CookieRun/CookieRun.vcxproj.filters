@@ -277,6 +277,9 @@
     <Filter Include="03.Scene\00.Stage">
       <UniqueIdentifier>{068373d3-1f40-46f2-89d5-630eaed9678a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="04.Manager\LineMgr">
+      <UniqueIdentifier>{c10fcd98-7dc7-4bfc-b431-b2c41747b2ae}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="CookieRun.rc">

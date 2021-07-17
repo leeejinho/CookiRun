@@ -11,7 +11,6 @@ CPlayer::CPlayer()
 {
 	ZeroMemory(&m_vPos, sizeof(D3DXVECTOR3));
 	ZeroMemory(&m_vSize, sizeof(D3DXVECTOR3));
-	ZeroMemory(&m_Rect, sizeof(RECT));
 }	  
 
 
@@ -37,7 +36,6 @@ void CPlayer::Initialize()
 	m_fJumpPower = 50.f;
 	m_iMaxJump = 2;
 	m_fSpeed = 5.f;
-
 }
 
 int CPlayer::Update()
@@ -48,6 +46,7 @@ int CPlayer::Update()
 	Move_Player();
 	Key_Check();
 	Jumping();
+	Update_Rect();
 
 	return OBJ_NOENVENT;
 }
@@ -92,6 +91,7 @@ void CPlayer::Move_Player()
 {
 	m_vPos.x += m_fSpeed;
 	CScrollMgr::Get_Instance()->Set_ScrollX(-m_fSpeed);
+	m_vPos.y += m_fSpeed;
 }
 
 void CPlayer::Key_Check()
@@ -166,12 +166,14 @@ void CPlayer::Jumping()
 			m_iMaxJump = 2;
 		}
 	}
+
+
 }
 
 void CPlayer::Update_Rect()
 {
-	m_Rect.left = (LONG)(m_vPos.x - 35);
-	m_Rect.right = (LONG)(m_vPos.x + 35);
-	m_Rect.bottom = (LONG)(m_vPos.y + (364 / 2));
-	m_Rect.top = (LONG)(m_Rect.bottom - 140);
+	m_tRect.left = (LONG)(m_vPos.x - 35);
+	m_tRect.right = (LONG)(m_vPos.x + 35);
+	m_tRect.bottom = (LONG)(m_vPos.y + (364 / 2));
+	m_tRect.top = (LONG)(m_tRect.bottom - 140);
 }

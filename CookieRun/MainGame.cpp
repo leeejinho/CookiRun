@@ -32,19 +32,20 @@ HRESULT CMainGame::Initialize()
 	pObj->Initialize();
 	CObjMgr::Get_Instance()->Add_Object(pObj, OBJID::PLAYER);
 
-	pObj = new CHpup(500.f,100.f);
+	pObj = new CHpup(1000.f,200.f);
 	pObj->Initialize();
 	CObjMgr::Get_Instance()->Add_Object(pObj, OBJID::SP);
 
-	pObj = new CGiant(300.f,200.f);
-	pObj->Initialize();
-	CObjMgr::Get_Instance()->Add_Object(pObj, OBJID::GIANT);
 
-	pObj = new CScore(500.f,300.f);
+	pObj = new CScore(2000.f,300.f);
 	pObj->Initialize();
 	CObjMgr::Get_Instance()->Add_Object(pObj, OBJID::HP);
 
-	pObj = new CSpeed(100.f,500.f);
+	pObj = new CGiant(3000.f,200.f);
+	pObj->Initialize();
+	CObjMgr::Get_Instance()->Add_Object(pObj, OBJID::GIANT);
+
+	pObj = new CSpeed(5000.f,400.f);
 	pObj->Initialize();
 	CObjMgr::Get_Instance()->Add_Object(pObj, OBJID::SPEED);
 

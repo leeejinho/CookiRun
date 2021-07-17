@@ -46,7 +46,6 @@ void CHpup::Late_Update()
 void CHpup::Render()
 {
 	int iScrollX = (int)CScrollMgr::Get_Instance()->Get_ScrollX();
-	int iScrollY = (int)CScrollMgr::Get_Instance()->Get_ScrollY();
 
 	if (dwTime + 122 < GetTickCount())
 	{
@@ -62,20 +61,20 @@ void CHpup::Render()
 
 		if (pTexInfo == nullptr)
 			return;
-		float fCenterX = pTexInfo->tImageInfo.Width >> 1;	//이미지 가로 길이 / 2 => 이미지 중앙
-		float fCenterY = pTexInfo->tImageInfo.Height >> 1;	//이미지 세로 길이 / 2 -> 이미지 중앙
+		float fCenterX = float(pTexInfo->tImageInfo.Width >> 1);	//이미지 가로 길이 / 2 => 이미지 중앙
+		float fCenterY = float(pTexInfo->tImageInfo.Height >> 1);	//이미지 세로 길이 / 2 -> 이미지 중앙
 
 
 		D3DXMATRIX matScale, matTrans, matWorld;
 		D3DXMatrixScaling(&matScale, 0.5f, 0.5f, 0.f);										//아이템 크기
-		D3DXMatrixTranslation(&matTrans, m_vPos.x + iScrollX, m_vPos.y + iScrollY, 0.f);	//아이템 위치
+		D3DXMatrixTranslation(&matTrans, m_vPos.x + iScrollX, m_vPos.y, 0.f);	//아이템 위치
 		matWorld = matScale * matTrans;
 
 		CGraphic_Device::Get_Instance()->Get_Sprite()->SetTransform(&matWorld);
 		CGraphic_Device::Get_Instance()->Get_Sprite()->Draw(pTexInfo->pTexture, nullptr, &D3DXVECTOR3(fCenterX, fCenterY, 0.f), nullptr, D3DCOLOR_ARGB(255, 255, 255, 255));
 
 	//						  왼쪽						 위						  오른쪽				 아래
-		RECT Hpup = { fCenterX - 20 , fCenterY - 20 , fCenterX + 20 ,fCenterY + 20 };
+	m_tRect = { LONG(m_vPos.x - 20) ,LONG(m_vPos.y - 20) , LONG(m_vPos.x + 20) , LONG(m_vPos.y + 20) };
 	//	left , top , right , bottom
 }
 
