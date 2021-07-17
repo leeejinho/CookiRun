@@ -7,6 +7,7 @@ CObj::CObj()
 {
 	ZeroMemory(&m_vPos, sizeof(D3DXVECTOR3));
 	ZeroMemory(&m_vSize, sizeof(D3DXVECTOR3));
+	ZeroMemory(&m_tRect, sizeof(RECT));
 }
 
 CObj::~CObj()

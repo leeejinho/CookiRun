@@ -25,7 +25,6 @@ private:
 	D3DXVECTOR3 m_vSize;
 	DWORD		m_dwDelay;
 	WCHAR*		m_pStateKey;
-	RECT		m_Rect;
 
 	bool		m_bSlide;
 

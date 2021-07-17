@@ -65,14 +65,14 @@ void CSpeed::Render()
 
 	D3DXMATRIX matScale, matTrans, matWorld;
 	D3DXMatrixScaling(&matScale, 0.5f, 0.5f, 0.f);											//아이템 크기
-	D3DXMatrixTranslation(&matTrans, m_vPos.x + iScrollX, m_vPos.x + iScrollY, 0.f);		//아이템 위치
+	D3DXMatrixTranslation(&matTrans, m_vPos.x + iScrollX, m_vPos.y + iScrollY, 0.f);		//아이템 위치
 	matWorld = matScale * matTrans;
 
 	CGraphic_Device::Get_Instance()->Get_Sprite()->SetTransform(&matWorld);
 	CGraphic_Device::Get_Instance()->Get_Sprite()->Draw(pTexInfo->pTexture, nullptr, &D3DXVECTOR3(fCenterX, fCenterY, 0.f), nullptr, D3DCOLOR_ARGB(255, 255, 255, 255));
 
 	//						  왼쪽						 위						  오른쪽				 아래
-	RECT Hpup = { fCenterX - 20 , fCenterY - 20 , fCenterX + 20 , fCenterY + 20 };
+	m_tRect = { LONG(m_vPos.x - 20) ,LONG(m_vPos.y - 20) , LONG(m_vPos.x + 20) , LONG(m_vPos.y + 20) };
 	//	left , top , right , bottom
 }
 
