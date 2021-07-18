@@ -29,10 +29,10 @@ void CPlayer::Initialize()
 	CTexture_Manager::Get_Instance()->Insert_Texture(CTexture_Manager::MULTI_TEX, L"../Texture/Player/Dead/cookie0001_dead0%d.png", L"Player", L"Dead", 5);
 
 	// seokwon test
-	m_vPos = { 7200.f,WINCY*0.5f , 0.f };
+	//m_vPos = { 7200.f,WINCY*0.5f , 0.f };
 	// seokwon test
 	
-	//m_vPos = { 200.f, WINCY * 0.5f, 0.f };
+	m_vPos = { 200.f, WINCY * 0.5f, 0.f };
 	m_vSize = { 1.f, 1.f, 0.f };
 	m_iDrawID = 0;
 
@@ -54,6 +54,7 @@ int CPlayer::Update()
 		Key_Check();
 		Jumping();
 		Update_Hp();
+		Update_Rect();
 	}
 	return OBJ_NOENVENT;
 }
@@ -97,21 +98,21 @@ void CPlayer::Release()
 
 void CPlayer::Move_Player()
 {
-	//m_vPos.x += m_fSpeed;
-	//CScrollMgr::Get_Instance()->Set_ScrollX(-m_fSpeed);
+	m_vPos.x += m_fSpeed;
+	CScrollMgr::Get_Instance()->Set_ScrollX(-m_fSpeed);
 	
 	//seokwon test
-	if (CKeyMgr::Get_Instance()->Key_Pressing(VK_RIGHT))
-		m_vPos.x += 5.f;
-	if (CKeyMgr::Get_Instance()->Key_Pressing(VK_LEFT))
-		m_vPos.x -= 5.f;
+	//if (CKeyMgr::Get_Instance()->Key_Pressing(VK_RIGHT))
+	//	m_vPos.x += 5.f;
+	//if (CKeyMgr::Get_Instance()->Key_Pressing(VK_LEFT))
+	//	m_vPos.x -= 5.f;
 	//seokwon test
 }
 
 void CPlayer::Key_Check()
 {
-	//if (CKeyMgr::Get_Instance()->Key_Pressing(VK_RIGHT) && !m_bJump)
-	if (CKeyMgr::Get_Instance()->Key_Pressing('Z') && !m_bJump)		//////////////////////seokwon test
+	//if (CKeyMgr::Get_Instance()->Key_Pressing('Z') && !m_bJump)		//////////////////////seokwon test
+	if (CKeyMgr::Get_Instance()->Key_Pressing(VK_RIGHT) && !m_bJump)
 	{
 		if (!m_bSlide)
 			m_iDrawID = 0;
@@ -119,8 +120,8 @@ void CPlayer::Key_Check()
 		m_pStateKey = L"Slide";
 		m_iMaxDrawID = 1;
 	}
-	//else if (CKeyMgr::Get_Instance()->Key_Down(VK_LEFT) && !m_bSlide && m_iMaxJump > 0)
-	else if (CKeyMgr::Get_Instance()->Key_Down('X') && !m_bSlide && m_iMaxJump > 0)     //////////////////////seokwon test
+	//else if (CKeyMgr::Get_Instance()->Key_Down('X') && !m_bSlide && m_iMaxJump > 0)     //////////////////////seokwon test
+	else if (CKeyMgr::Get_Instance()->Key_Down(VK_LEFT) && !m_bSlide && m_iMaxJump > 0)
 	{
 		if (!m_bJump)
 		{
@@ -190,6 +191,39 @@ void CPlayer::Update_Rect()
 	m_tRect.right = (LONG)(m_vPos.x + 35);
 	m_tRect.bottom = (LONG)(m_vPos.y + (364 / 2));
 	m_tRect.top = (LONG)(m_tRect.bottom - 140);
+}
+
+void CPlayer::Speed_Item()
+{
+}
+
+void CPlayer::Giant_Item()
+{
+}
+
+void CPlayer::Item_Use(CItem::ITEM_TYPE _Type)
+{
+	switch (_Type)
+	{
+	case CItem::SMALL_HP:
+
+		break;
+	case CItem::HP:
+
+		break;
+	case CItem::JELLY:
+
+		break;
+	case CItem::GIANT:
+
+		break;
+	case CItem::SPEED:
+
+		break;
+	case CItem::MAGNET:
+
+		break;
+	}
 }
 
 void CPlayer::Update_Hp()

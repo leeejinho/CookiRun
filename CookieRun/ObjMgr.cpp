@@ -38,11 +38,21 @@ void CObjMgr::Update()
 		}
 	}
 	//CCollisionMgr::Collision_Tile(m_listObj[OBJID::LAND], m_listObj[OBJID::PLAYER]);
-	CCollisionMgr::Collision_Rect(m_listObj[OBJID::PLAYER], m_listObj[OBJID::SP]);
-	CCollisionMgr::Collision_Rect(m_listObj[OBJID::PLAYER], m_listObj[OBJID::HP]);
-	CCollisionMgr::Collision_Rect(m_listObj[OBJID::PLAYER], m_listObj[OBJID::GIANT]);
-	CCollisionMgr::Collision_Rect(m_listObj[OBJID::PLAYER], m_listObj[OBJID::SPEED]);
-	CCollisionMgr::Collision_Rect(m_listObj[OBJID::PLAYER], m_listObj[OBJID::JELLY]);
+	//CCollisionMgr::Collision_Rect(m_listObj[OBJID::PLAYER], m_listObj[OBJID::SP]);
+	//CCollisionMgr::Collision_Rect(m_listObj[OBJID::PLAYER], m_listObj[OBJID::HP]);
+	//CCollisionMgr::Collision_Rect(m_listObj[OBJID::PLAYER], m_listObj[OBJID::GIANT]);
+	//CCollisionMgr::Collision_Rect(m_listObj[OBJID::PLAYER], m_listObj[OBJID::SPEED]);
+	//CCollisionMgr::Collision_Rect(m_listObj[OBJID::PLAYER], m_listObj[OBJID::JELLY]);
+
+	CCollisionMgr::Collision_Player_Item(m_listObj[OBJID::PLAYER].front(), m_listObj[OBJID::ITEM]);
+	CCollisionMgr::Collision_Player_Jelly(m_listObj[OBJID::PLAYER].front(), m_listObj[OBJID::JELLY]);
+	CCollisionMgr::Collision_Player_Block(m_listObj[OBJID::PLAYER].front(), m_listObj[OBJID::BLOCK]);
+	CCollisionMgr::Collision_Player_Tile(m_listObj[OBJID::PLAYER].front(), m_listObj[OBJID::LAND]);
+	
+	/*
+	CCollisionMgr::Magnet_Jelly();
+	*/
+
 }
 
 void CObjMgr::Late_Update()

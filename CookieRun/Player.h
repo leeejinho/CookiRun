@@ -1,5 +1,7 @@
 #pragma once
 #include "Obj.h"
+#include "Item.h"
+
 class CPlayer final:
 	public CObj
 {
@@ -27,7 +29,7 @@ private:
 	void Giant_Item();
 	
 public:
-	void Player_Item(int _ItemNumber);
+	void Item_Use(CItem::ITEM_TYPE _Type);
 
 	void Update_Hp();
 

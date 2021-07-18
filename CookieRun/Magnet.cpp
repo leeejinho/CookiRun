@@ -11,6 +11,8 @@ CMagnet::CMagnet(float _x, float _y)
 {
 	m_vPos.x = _x;
 	m_vPos.y = _y;
+
+	m_eType = MAGNET;
 }
 
 

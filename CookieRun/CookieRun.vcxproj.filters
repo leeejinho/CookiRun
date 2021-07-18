@@ -28,37 +28,10 @@
     <ClCompile Include="Player.cpp">
       <Filter>01.Obj\Player</Filter>
     </ClCompile>
-    <ClCompile Include="Giant.cpp">
-      <Filter>01.Obj\Item</Filter>
-    </ClCompile>
-    <ClCompile Include="Hpup.cpp">
-      <Filter>01.Obj\Item</Filter>
-    </ClCompile>
-    <ClCompile Include="Jelly.cpp">
-      <Filter>01.Obj\Item</Filter>
-    </ClCompile>
-    <ClCompile Include="Score.cpp">
-      <Filter>01.Obj\Item</Filter>
-    </ClCompile>
-    <ClCompile Include="Speed.cpp">
-      <Filter>01.Obj\Item</Filter>
-    </ClCompile>
     <ClCompile Include="Hpbar.cpp">
       <Filter>01.Obj\UI</Filter>
     </ClCompile>
     <ClCompile Include="Block.cpp">
-      <Filter>01.Obj\Block</Filter>
-    </ClCompile>
-    <ClCompile Include="DjumpBlock.cpp">
-      <Filter>01.Obj\Block</Filter>
-    </ClCompile>
-    <ClCompile Include="JumpBlock.cpp">
-      <Filter>01.Obj\Block</Filter>
-    </ClCompile>
-    <ClCompile Include="Land.cpp">
-      <Filter>01.Obj\Block</Filter>
-    </ClCompile>
-    <ClCompile Include="SlideBlock.cpp">
       <Filter>01.Obj\Block</Filter>
     </ClCompile>
     <ClCompile Include="CollisionMgr.cpp">
@@ -79,17 +52,47 @@
     <ClCompile Include="ScrollMgr.cpp">
       <Filter>97.Manager\ScrollMgr</Filter>
     </ClCompile>
-    <ClCompile Include="MultiTexture.cpp">
-      <Filter>Texture</Filter>
-    </ClCompile>
-    <ClCompile Include="SingleTexture.cpp">
-      <Filter>Texture</Filter>
-    </ClCompile>
     <ClCompile Include="Texture.cpp">
       <Filter>Texture</Filter>
     </ClCompile>
+    <ClCompile Include="DjumpBlock.cpp">
+      <Filter>01.Obj\Block\01.Djump</Filter>
+    </ClCompile>
+    <ClCompile Include="JumpBlock.cpp">
+      <Filter>01.Obj\Block\02.Jump</Filter>
+    </ClCompile>
+    <ClCompile Include="Land.cpp">
+      <Filter>01.Obj\Block\00.Land</Filter>
+    </ClCompile>
+    <ClCompile Include="SlideBlock.cpp">
+      <Filter>01.Obj\Block\03.Slide</Filter>
+    </ClCompile>
+    <ClCompile Include="Giant.cpp">
+      <Filter>01.Obj\Item\03.Giant</Filter>
+    </ClCompile>
+    <ClCompile Include="Jelly.cpp">
+      <Filter>01.Obj\Item\00.Jelly</Filter>
+    </ClCompile>
+    <ClCompile Include="Hpup.cpp">
+      <Filter>01.Obj\Item\01.SmallHp</Filter>
+    </ClCompile>
+    <ClCompile Include="Score.cpp">
+      <Filter>01.Obj\Item\02.Hp</Filter>
+    </ClCompile>
+    <ClCompile Include="Speed.cpp">
+      <Filter>01.Obj\Item\04.Speed</Filter>
+    </ClCompile>
     <ClCompile Include="Magnet.cpp">
-      <Filter>01.Obj\00.Item\06.Magnet</Filter>
+      <Filter>01.Obj\Item\05.Magnet</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>01.Obj\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiTexture.cpp">
+      <Filter>Texture\00.Multi</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleTexture.cpp">
+      <Filter>Texture\01.Single</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -144,37 +147,10 @@
     <ClInclude Include="Player.h">
       <Filter>01.Obj\Player</Filter>
     </ClInclude>
-    <ClInclude Include="Giant.h">
-      <Filter>01.Obj\Item</Filter>
-    </ClInclude>
-    <ClInclude Include="Hpup.h">
-      <Filter>01.Obj\Item</Filter>
-    </ClInclude>
-    <ClInclude Include="Jelly.h">
-      <Filter>01.Obj\Item</Filter>
-    </ClInclude>
-    <ClInclude Include="Score.h">
-      <Filter>01.Obj\Item</Filter>
-    </ClInclude>
-    <ClInclude Include="Speed.h">
-      <Filter>01.Obj\Item</Filter>
-    </ClInclude>
     <ClInclude Include="Hpbar.h">
       <Filter>01.Obj\UI</Filter>
     </ClInclude>
     <ClInclude Include="Block.h">
-      <Filter>01.Obj\Block</Filter>
-    </ClInclude>
-    <ClInclude Include="DjumpBlock.h">
-      <Filter>01.Obj\Block</Filter>
-    </ClInclude>
-    <ClInclude Include="JumpBlock.h">
-      <Filter>01.Obj\Block</Filter>
-    </ClInclude>
-    <ClInclude Include="Land.h">
-      <Filter>01.Obj\Block</Filter>
-    </ClInclude>
-    <ClInclude Include="SlideBlock.h">
       <Filter>01.Obj\Block</Filter>
     </ClInclude>
     <ClInclude Include="CollisionMgr.h">
@@ -195,17 +171,47 @@
     <ClInclude Include="ScrollMgr.h">
       <Filter>97.Manager\ScrollMgr</Filter>
     </ClInclude>
-    <ClInclude Include="MultiTexture.h">
-      <Filter>Texture</Filter>
-    </ClInclude>
-    <ClInclude Include="SingleTexture.h">
-      <Filter>Texture</Filter>
-    </ClInclude>
     <ClInclude Include="Texture.h">
       <Filter>Texture</Filter>
     </ClInclude>
+    <ClInclude Include="DjumpBlock.h">
+      <Filter>01.Obj\Block\01.Djump</Filter>
+    </ClInclude>
+    <ClInclude Include="JumpBlock.h">
+      <Filter>01.Obj\Block\02.Jump</Filter>
+    </ClInclude>
+    <ClInclude Include="Land.h">
+      <Filter>01.Obj\Block\00.Land</Filter>
+    </ClInclude>
+    <ClInclude Include="SlideBlock.h">
+      <Filter>01.Obj\Block\03.Slide</Filter>
+    </ClInclude>
+    <ClInclude Include="Giant.h">
+      <Filter>01.Obj\Item\03.Giant</Filter>
+    </ClInclude>
+    <ClInclude Include="Jelly.h">
+      <Filter>01.Obj\Item\00.Jelly</Filter>
+    </ClInclude>
+    <ClInclude Include="Hpup.h">
+      <Filter>01.Obj\Item\01.SmallHp</Filter>
+    </ClInclude>
+    <ClInclude Include="Score.h">
+      <Filter>01.Obj\Item\02.Hp</Filter>
+    </ClInclude>
+    <ClInclude Include="Speed.h">
+      <Filter>01.Obj\Item\04.Speed</Filter>
+    </ClInclude>
     <ClInclude Include="Magnet.h">
-      <Filter>01.Obj\00.Item\06.Magnet</Filter>
+      <Filter>01.Obj\Item\05.Magnet</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>01.Obj\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiTexture.h">
+      <Filter>Texture\00.Multi</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleTexture.h">
+      <Filter>Texture\01.Single</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -247,9 +253,6 @@
     <Filter Include="01.Obj\UI">
       <UniqueIdentifier>{8fff6b0e-ae9b-4584-a9d5-1677057f5fb0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="01.Obj\Block">
-      <UniqueIdentifier>{372ac7f7-a126-4641-b70a-1f362af97473}</UniqueIdentifier>
-    </Filter>
     <Filter Include="97.Manager\CollisionMgr">
       <UniqueIdentifier>{345ebeec-046a-4ea8-a127-cd793b635614}</UniqueIdentifier>
     </Filter>
@@ -268,11 +271,47 @@
     <Filter Include="97.Manager\ScrollMgr">
       <UniqueIdentifier>{5f6c3fd2-de14-449b-ba03-3aad7cfabb8b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01.Obj\Block">
+      <UniqueIdentifier>{372ac7f7-a126-4641-b70a-1f362af97473}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\Block\00.Land">
+      <UniqueIdentifier>{4c929b9e-1c39-4f49-b98a-7f8f892e8902}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\Block\01.Djump">
+      <UniqueIdentifier>{78c817f8-ff15-4844-9517-951b7f45d3fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\Block\02.Jump">
+      <UniqueIdentifier>{ee2c19de-de88-4cf1-bd99-a02fdac62f44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\Block\03.Slide">
+      <UniqueIdentifier>{5ede66eb-09c7-4276-9583-16798588cfe2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\Item\00.Jelly">
+      <UniqueIdentifier>{e90f22bd-ecd6-472c-8dcb-82e71cb97f53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\Item\01.SmallHp">
+      <UniqueIdentifier>{2360d9b6-f065-4777-8f5b-d9f8ca8b8816}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\Item\02.Hp">
+      <UniqueIdentifier>{4361baac-dd63-4f55-8001-59283ed13b95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\Item\03.Giant">
+      <UniqueIdentifier>{0d14f980-5e03-4acb-a468-457b5e151ed7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\Item\04.Speed">
+      <UniqueIdentifier>{bd7b6819-01c1-40ce-a4c9-7605915f4a79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\Item\05.Magnet">
+      <UniqueIdentifier>{71a8fb3a-6f20-4e61-a92d-d737d91bff79}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Texture">
       <UniqueIdentifier>{df6f5089-e3a6-45d4-b6df-bc6918a4ede0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="01.Obj\00.Item\06.Magnet">
-      <UniqueIdentifier>{d115c21e-5358-471c-bb14-1063a5dc9f90}</UniqueIdentifier>
+    <Filter Include="Texture\00.Multi">
+      <UniqueIdentifier>{f5ef9c11-5f74-427d-b307-eee416d3a9c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Texture\01.Single">
+      <UniqueIdentifier>{898401fe-83b9-4e0f-b477-a70cdbade1bf}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

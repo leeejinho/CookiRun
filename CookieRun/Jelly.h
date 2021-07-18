@@ -1,6 +1,6 @@
 #pragma once
-#include "Obj.h"
-class CJelly :	public CObj
+#include "Item.h"
+class CJelly :	public CItem
 {
 public:
 	CJelly();

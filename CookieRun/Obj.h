@@ -3,6 +3,7 @@
 #define __OBJ_H__
 class CObj abstract
 {
+
 public:
 	CObj();
 	virtual ~CObj();
@@ -26,8 +27,7 @@ public:
 	D3DXVECTOR3 Get_Pos() { return m_vPos; }
 	D3DXVECTOR3 Get_Size() { return m_vSize; }
 	
-public:
-	int& Get_Number() { return itemNumber; }
+
 
 protected:
 	bool		m_bDead;
@@ -35,7 +35,7 @@ protected:
 	D3DXVECTOR3		m_vPos;
 	D3DXVECTOR3		m_vSize;
 	RECT	m_tRect;
-	int		itemNumber;
+
 };
 
 #endif // !__OBJ_H__

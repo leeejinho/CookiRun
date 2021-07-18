@@ -6,15 +6,15 @@
 
 
 CHpup::CHpup()
-	:iNumber(0)
 {
 }
 
 CHpup::CHpup(float TexInfoX, float TexInfoY)
-	:iNumber(0)
 {
 	m_vPos.x = TexInfoX;
 	m_vPos.y = TexInfoY;
+
+	m_eType = SMALL_HP;
 }
 
 
@@ -27,7 +27,6 @@ void CHpup::Initialize()
 {
 	if (FAILED(CTexture_Manager::Get_Instance()->Insert_Texture(CTexture_Manager::MULTI_TEX, L"../Image/Item/Hp/item08_energy_%d.png", L"Item", L"HpUp",4)))
 		return;
-	itemNumber = 1;
 	dwTime = GetTickCount();
 }
 

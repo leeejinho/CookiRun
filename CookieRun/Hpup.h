@@ -2,8 +2,8 @@
 #ifndef __CHPUP_H__
 #define __CHPUP_H__
 
-#include "Obj.h"
-class CHpup :	public CObj
+#include "Item.h"
+class CHpup :	public CItem
 {
 public:
 	explicit CHpup();
@@ -17,9 +17,7 @@ public:
 	virtual void Render() override;
 	virtual void Release() override;
 
-private:
-	int iNumber;
-	DWORD dwTime;
+
 };
 
 #endif // !__CHPUP_H__

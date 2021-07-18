@@ -6,6 +6,7 @@
 #include "Score.h"
 #include "Speed.h"
 #include "Player.h"
+#include "Item.h"
 
 CCollisionMgr::CCollisionMgr()
 {
@@ -42,7 +43,7 @@ void CCollisionMgr::Collision_Rect(list<CObj*>& _Player, list<CObj*>& _Item)
 			if (IntersectRect(&rc, &Player->Get_Rect(), &Item->Get_Rect()))
 			{
 				Item->Set_Dead();
-				static_cast<CPlayer*>(Player)->Player_Item(Item->Get_Number());
+				//static_cast<CPlayer*>(Player)->Player_Item(Item->Get_Number());
 			}
 		}
 	}
@@ -93,6 +94,76 @@ bool CCollisionMgr::Check_Rect(CObj * _Player, CObj * _Tile, float * _x, float *
 		return true;
 	}
 	return false;
+}
+
+
+
+
+
+
+
+
+void CCollisionMgr::Collision_Player_Item(CObj *& _Player, list<CObj*>& _Item)
+{
+	RECT rc = {};
+
+	for (auto& Item : _Item)
+	{
+		if (IntersectRect(&rc, &_Player->Get_Rect(), &Item->Get_Rect()))
+		{
+			static_cast<CPlayer*>(_Player)->Item_Use(static_cast<CItem*>(Item)->Get_ItemType());
+			Item->Set_Dead();
+		}
+	}
+	
+}
+
+void CCollisionMgr::Collision_Player_Jelly(CObj *& _Player, list<CObj*>& _Jelly)
+{
+	RECT rc = {};
+
+	for (auto& Jelly : _Jelly)
+	{
+		if (IntersectRect(&rc, &_Player->Get_Rect(), &Jelly->Get_Rect()))
+		{
+			static_cast<CPlayer*>(_Player)->Item_Use(static_cast<CItem*>(Jelly)->Get_ItemType());
+			Jelly->Set_Dead();
+		}
+	}
+
+}
+
+void CCollisionMgr::Collision_Player_Block(CObj *& _Player, list<CObj*>& _Block)
+{
+	RECT rc = {};
+
+	for (auto& Block : _Block)
+	{
+		if (IntersectRect(&rc, &_Player->Get_Rect(), &Block->Get_Rect()))
+		{
+			//player hit
+		}
+	}
+
+}
+
+void CCollisionMgr::Collision_Player_Tile(CObj *& _Player, list<CObj*>& _Tile)
+{
+	RECT rc = {};
+
+	for (auto& Tile : _Tile)
+	{
+		if (IntersectRect(&rc, &_Player->Get_Rect(), &Tile->Get_Rect()))
+		{
+			//tile
+		}
+	}
+
+}
+
+void CCollisionMgr::Magnet_Jelly(CObj *& _Player, list<CObj*>& _Jelly)
+{
+	
 }
 
 //void CCollisionMgr::Collision_Tile(list<CObj*>& _Player, list<CObj*>& _Tile)

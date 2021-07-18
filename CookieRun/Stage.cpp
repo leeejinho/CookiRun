@@ -38,7 +38,7 @@ void CStage::Initialize()
 		Stage_Set = new CStage_Setting;
 	Stage_Set->stage1_Setting();
 
-	CScrollMgr::Get_Instance()->Set_ScrollX(-7000.f);
+	//CScrollMgr::Get_Instance()->Set_ScrollX(-7000.f);
 	///////seokwon Test
 
 }
@@ -46,16 +46,16 @@ void CStage::Initialize()
 void CStage::Update()
 {
 	///////seokwon Test
-	if (CKeyMgr::Get_Instance()->Key_Pressing(VK_RIGHT))
-		CScrollMgr::Get_Instance()->Set_ScrollX(-5.f);
-	if (CKeyMgr::Get_Instance()->Key_Pressing(VK_LEFT))
-		CScrollMgr::Get_Instance()->Set_ScrollX(+5.f);
-	if (CKeyMgr::Get_Instance()->Key_Down('Q'))
-		CObjMgr::Get_Instance()->Save_Land();
-	if (CKeyMgr::Get_Instance()->Key_Down('W'))
-		CObjMgr::Get_Instance()->Save_Block();
-	if (CKeyMgr::Get_Instance()->Key_Down('E'))
-		CObjMgr::Get_Instance()->Load();
+	//if (CKeyMgr::Get_Instance()->Key_Pressing(VK_RIGHT))
+	//	CScrollMgr::Get_Instance()->Set_ScrollX(-5.f);
+	//if (CKeyMgr::Get_Instance()->Key_Pressing(VK_LEFT))
+	//	CScrollMgr::Get_Instance()->Set_ScrollX(+5.f);
+	//if (CKeyMgr::Get_Instance()->Key_Down('Q'))
+	//	CObjMgr::Get_Instance()->Save_Land();
+	//if (CKeyMgr::Get_Instance()->Key_Down('W'))
+	//	CObjMgr::Get_Instance()->Save_Block();
+	//if (CKeyMgr::Get_Instance()->Key_Down('E'))
+	//	CObjMgr::Get_Instance()->Load();
 	///////seokwon Test
 
 	CObjMgr::Get_Instance()->Update();
