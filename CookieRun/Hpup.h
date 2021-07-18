@@ -6,8 +6,8 @@
 class CHpup :	public CObj
 {
 public:
-	CHpup();
-	CHpup(float TexInfoX , float TexInfoY);
+	explicit CHpup();
+	explicit CHpup(float TexInfoX , float TexInfoY);
 	virtual ~CHpup();
 
 public:

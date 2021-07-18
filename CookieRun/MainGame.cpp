@@ -42,11 +42,11 @@ HRESULT CMainGame::Initialize()
 	pObj->Initialize();
 	CObjMgr::Get_Instance()->Add_Object(pObj, OBJID::HP);
 
-	pObj = new CGiant(3000.f,200.f);
+	pObj = new CGiant(2000.f,200.f);
 	pObj->Initialize();
 	CObjMgr::Get_Instance()->Add_Object(pObj, OBJID::GIANT);
 
-	pObj = new CSpeed(5000.f,400.f);
+	pObj = new CSpeed(1000.f,400.f);
 	pObj->Initialize();
 	CObjMgr::Get_Instance()->Add_Object(pObj, OBJID::SPEED);
 

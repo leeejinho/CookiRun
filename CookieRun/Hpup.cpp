@@ -27,7 +27,7 @@ void CHpup::Initialize()
 {
 	if (FAILED(CTexture_Manager::Get_Instance()->Insert_Texture(CTexture_Manager::MULTI_TEX, L"../Image/Item/Hp/item08_energy_%d.png", L"Item", L"HpUp",4)))
 		return;
-  
+	itemNumber = 1;
 	dwTime = GetTickCount();
 }
 
@@ -67,7 +67,7 @@ void CHpup::Render()
 
 		D3DXMATRIX matScale, matTrans, matWorld;
 		D3DXMatrixScaling(&matScale, 0.5f, 0.5f, 0.f);										//아이템 크기
-		D3DXMatrixTranslation(&matTrans, m_vPos.x + iScrollX, m_vPos.y, 0.f);	//아이템 위치
+		D3DXMatrixTranslation(&matTrans, m_vPos.x + iScrollX, m_vPos.y, 0.f);				//아이템 위치
 		matWorld = matScale * matTrans;
 
 		CGraphic_Device::Get_Instance()->Get_Sprite()->SetTransform(&matWorld);
