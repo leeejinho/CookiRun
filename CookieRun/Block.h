@@ -24,6 +24,8 @@ public:
 public:
 	void Set_Pos(float _fx, float _fy) { m_vPos.x = _fx; m_vPos.y = _fy; }
 
+public:
+	void Destory();
 
 protected:
 	D3DXVECTOR3	m_vPos;
@@ -31,6 +33,13 @@ protected:
 
 	RECT	m_tRect;
 	DWORD	DrawId;
+	DWORD	m_dwDestory;
+
+	bool	m_bDestory;
+
+	float	m_fDestory_Scale;
+	float	m_fDestory_Angle;
+	float	m_fDestory_Trans;
 
 	BLOCK_TYPE m_eType;
 	HDC	hdc;

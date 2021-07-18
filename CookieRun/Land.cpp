@@ -35,7 +35,8 @@ void CLand::Initialize()
 
 int CLand::Update()
 {
-
+	if (m_bDead)
+		return OBJ_DEAD;
 
 
 

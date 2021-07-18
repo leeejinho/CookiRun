@@ -1,11 +1,12 @@
 #pragma once
 #include "Obj.h"
-class CJelly :	public CObj
+class CMagnet :
+	public CObj
 {
 public:
-	CJelly();
-	CJelly(float TexInfoX, float TexInfoY);
-	virtual ~CJelly();
+	CMagnet();
+	CMagnet(float _x, float _y);
+	~CMagnet();
 
 public:
 	virtual void Initialize() override;
@@ -14,9 +15,10 @@ public:
 	virtual void Render() override;
 	virtual void Release() override;
 
-//public:
-//	void Magnet();
+
+
 private:
-	int		Magnet_Speed;
+	int iNumber;
+	DWORD dwTime;
 };
 

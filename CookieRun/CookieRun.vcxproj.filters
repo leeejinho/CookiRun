@@ -85,6 +85,9 @@
     <ClCompile Include="Stage_Setting.cpp">
       <Filter>04.Manager\StageSetting</Filter>
     </ClCompile>
+    <ClCompile Include="Magnet.cpp">
+      <Filter>01.Obj\00.Item\06.Magnet</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CollisionMgr.h">
@@ -195,6 +198,9 @@
     <ClInclude Include="Stage_Setting.h">
       <Filter>04.Manager\StageSetting</Filter>
     </ClInclude>
+    <ClInclude Include="Magnet.h">
+      <Filter>01.Obj\00.Item\06.Magnet</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="CookieRun.ico">
@@ -294,6 +300,9 @@
     </Filter>
     <Filter Include="04.Manager\StageSetting">
       <UniqueIdentifier>{b1bdc231-55af-4920-bc62-f36e9a5ce7aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\00.Item\06.Magnet">
+      <UniqueIdentifier>{d115c21e-5358-471c-bb14-1063a5dc9f90}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

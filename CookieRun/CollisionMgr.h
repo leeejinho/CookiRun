@@ -22,6 +22,9 @@ public:
 //	static void Collision_Giant(list<CObj*>& _Player, list<CObj*>& _Item);
 //	static void Collision_Score(list<CObj*>& _Player, list<CObj*>& _Item);
 //	static void Collision_Speed(list<CObj*>& _Player, list<CObj*>& _Item);
+
+//public:
+//	static void Collision_Magnet_Jelly(CObj*& _Player, list<CObj*>& _Jelly);
 };
 
 #endif // !__COLLISIONMGR_H__
