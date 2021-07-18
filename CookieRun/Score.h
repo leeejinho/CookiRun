@@ -6,8 +6,8 @@
 class CScore :	public CObj
 {
 public:
-	CScore();
-	CScore(float TexInfoX, float TexInfoY);
+	explicit CScore();
+	explicit CScore(float TexInfoX, float TexInfoY);
 	virtual ~CScore();
 
 public:

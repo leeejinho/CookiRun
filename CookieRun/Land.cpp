@@ -24,10 +24,10 @@ CLand::~CLand()
 
 void CLand::Initialize()
 {
-	m_tRect.left=(LONG)(m_vPos.x-m_vSize.x * 0.5f);
-	m_tRect.top = (LONG)(m_vPos.y - m_vSize.y * 0.5f);
-	m_tRect.right = (LONG)(m_vPos.x + m_vSize.x * 0.5f);
-	m_tRect.bottom = (LONG)(m_vPos.y + m_vSize.y * 0.5f);
+	m_tRect.left	= (LONG)(m_vPos.x - m_vSize.x * 0.5f);
+	m_tRect.top		= (LONG)(m_vPos.y - m_vSize.y * 0.5f);
+	m_tRect.right	= (LONG)(m_vPos.x + m_vSize.x * 0.5f);
+	m_tRect.bottom	= (LONG)(m_vPos.y + m_vSize.y * 0.5f);
 
 	//hdc = GetDC(g_hWND);
 

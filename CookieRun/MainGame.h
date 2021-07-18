@@ -21,7 +21,7 @@ public:
 	void Release();
 public:
 	static CMainGame* Create();
-private:
+
 	
 };
 

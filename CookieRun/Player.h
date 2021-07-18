@@ -1,6 +1,6 @@
 #pragma once
 #include "Obj.h"
-class CPlayer :
+class CPlayer final:
 	public CObj
 {
 public:
@@ -14,18 +14,28 @@ public:
 	virtual void Render() override;
 	virtual void Release() override;
 
+public:
+	int	Get_Hp() { return m_iHp; }
+
 private:
 	void Move_Player();
 	void Key_Check();
 	void Jumping();
 	void Update_Rect();
 
+	void Speed_Item();
+	void Giant_Item();
+	
+public:
+	void Player_Item(int _ItemNumber);
+
+	void Update_Hp();
+
+
 private:
-	D3DXVECTOR3 m_vPos;
-	D3DXVECTOR3 m_vSize;
-	DWORD		m_dwDelay;
+	DWORD		m_dwTexDelay;
 	WCHAR*		m_pStateKey;
-	RECT		m_Rect;
+	DWORD		dwTime;
 
 	bool		m_bSlide;
 
@@ -37,8 +47,20 @@ private:
 	float		m_fJumpY;
 
 	float		m_fSpeed;
+	float		MaxSize;
+	float		LeastSize;
+	float		Plus;
+	bool		Speed;
+	bool		Giant;
 
 	int			m_iDrawID;
 	int			m_iMaxDrawID;
+
+	float			m_Up;
+
+	
+	DWORD		m_dwHpDelay;
+	int			m_iHp;
+
 };
 

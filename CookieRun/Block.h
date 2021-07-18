@@ -1,7 +1,6 @@
 #pragma once
 #include "Obj.h"
-class CBlock :
-	public CObj
+class CBlock : public CObj
 {
 public:
 	enum BLOCK_TYPE { JUMP, DJUMP, SLIDE, END };
@@ -30,8 +29,6 @@ public:
 protected:
 	D3DXVECTOR3	m_vPos;
 	D3DXVECTOR3	m_vSize;
-
-	RECT	m_tRect;
 	DWORD	DrawId;
 	DWORD	m_dwDestory;
 

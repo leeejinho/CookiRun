@@ -3,21 +3,23 @@
 #ifndef __COLLISIONMGR_H__
 #define __COLLISIONMGR_H__
 
+class CObj;
 class CCollisionMgr
 {
 public:
 	CCollisionMgr();
 	~CCollisionMgr();
 
+
 //public:
-//	static D3DXVECTOR3 GetPlayerRX(const CObj* _Player);	//ÇÃ·¹ÀÌ¾î ¿À¸¥ÂÊ XÁÂÇ¥
-//	static D3DXVECTOR3 GetItemLX(const CObj* _Item);		//¾ÆÀÌÅÛ ¿ÞÂÊ XÁÂÇ¥
-//	static D3DXVECTOR3 GetPlayerUY(const CObj* _Player);	//ÇÃ·¹ÀÌ¾î À§ YÁÂÇ¥
-//	static D3DXVECTOR3 GetItemBY(const CObj* _Item);		//¾ÆÀÌÅÛ ¾Æ·¡ YÁÂÇ¥
+//	static D3DXVECTOR3 GetPlayerRX(const CObj* _Player);	//ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Xï¿½ï¿½Ç¥
+//	static D3DXVECTOR3 GetItemLX(const CObj* _Item);		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Xï¿½ï¿½Ç¥
+//	static D3DXVECTOR3 GetPlayerUY(const CObj* _Player);	//ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ Yï¿½ï¿½Ç¥
+//	static D3DXVECTOR3 GetItemBY(const CObj* _Item);		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ·ï¿½ Yï¿½ï¿½Ç¥
 //
 //
 //public:
-//	//¾ÆÀÌÅÛ ¸Ô±â
+//	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô±ï¿½
 //	static void Collision_HpUp(list<CObj*>& _Player, list<CObj*>& _Item);
 //	static void Collision_Giant(list<CObj*>& _Player, list<CObj*>& _Item);
 //	static void Collision_Score(list<CObj*>& _Player, list<CObj*>& _Item);
@@ -25,6 +27,13 @@ public:
 
 //public:
 //	static void Collision_Magnet_Jelly(CObj*& _Player, list<CObj*>& _Jelly);
+
+public:
+	static void Collision_Rect(list<CObj*>& _Player, list<CObj*>& _Item);
+	static void CCollisionMgr::Collision_Tile(list<CObj*>& _Player, list<CObj*>& _Tile);
+	static bool CCollisionMgr::Check_Rect(CObj* _Player, CObj* _Item, float* _x, float* _y);
+
+
 };
 
 #endif // !__COLLISIONMGR_H__

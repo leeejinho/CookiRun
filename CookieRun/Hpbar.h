@@ -1,14 +1,11 @@
 #pragma once
-#ifndef __CHPUP_H__
-#define __CHPUP_H__
-
 #include "Obj.h"
-class CHpup :	public CObj
+class CHpbar final:
+	public CObj
 {
 public:
-	explicit CHpup();
-	explicit CHpup(float TexInfoX , float TexInfoY);
-	virtual ~CHpup();
+	CHpbar();
+	virtual ~CHpbar();
 
 public:
 	virtual void Initialize() override;
@@ -18,8 +15,6 @@ public:
 	virtual void Release() override;
 
 private:
-	int iNumber;
-	DWORD dwTime;
+	int m_iCurHp;
 };
 
-#endif // !__CHPUP_H__

@@ -50,8 +50,8 @@ void CJumpBlock::Render()
 	if (nullptr == pTexInfo)
 		return;
 
-	float fCenterX = pTexInfo->tImageInfo.Width >> 1;
-	float fCenterY = pTexInfo->tImageInfo.Height >> 1;
+	float fCenterX = float(pTexInfo->tImageInfo.Width >> 1);
+	float fCenterY = float(pTexInfo->tImageInfo.Height >> 1);
 
 	float ScrollX = CScrollMgr::Get_Instance()->Get_ScrollX();
 

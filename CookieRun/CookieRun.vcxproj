@@ -167,6 +167,7 @@
     <ClInclude Include="Function.h" />
     <ClInclude Include="Giant.h" />
     <ClInclude Include="Graphic_Device.h" />
+    <ClInclude Include="Hpbar.h" />
     <ClInclude Include="Jelly.h" />
     <ClInclude Include="JumpBlock.h" />
     <ClInclude Include="Hpup.h" />
@@ -198,6 +199,7 @@
   <ItemGroup>
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="DjumpBlock.cpp" />
+    <ClCompile Include="Hpbar.cpp" />
     <ClCompile Include="Jelly.cpp" />
     <ClCompile Include="JumpBlock.cpp" />
     <ClCompile Include="CollisionMgr.cpp" />
