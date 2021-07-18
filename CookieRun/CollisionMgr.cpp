@@ -155,7 +155,7 @@ void CCollisionMgr::Collision_Player_Tile(CObj *& _Player, list<CObj*>& _Tile)
 	{
 		if (IntersectRect(&rc, &_Player->Get_Rect(), &Tile->Get_Rect()))
 		{
-			//tile
+			_Player->Set_PosY(Tile->Get_Rect().top);
 		}
 	}
 

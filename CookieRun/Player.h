@@ -24,7 +24,7 @@ private:
 	void Key_Check();
 	void Jumping();
 	void Update_Rect();
-
+	void Hit_Check();
 	void Speed_Item();
 	void Giant_Item();
 	
@@ -39,8 +39,17 @@ private:
 	WCHAR*		m_pStateKey;
 	DWORD		dwTime;
 
-	bool		m_bSlide;
+	bool		m_bGiant;
+	DWORD		m_dwGiantTime;
+	bool		m_bSpeed;
+	DWORD		m_dwSpeedTime;
+	bool		m_bHit;
+	DWORD		m_dwHitTime;
+	int			m_iBlink;
+	DWORD		m_dwBlinkTime;
 
+
+	bool		m_bSlide;
 	bool		m_bJump;
 	bool		m_bDoubleJump;
 	int			m_iMaxJump;
