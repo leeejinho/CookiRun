@@ -6,8 +6,8 @@
 class CGiant :	public CObj
 {
 public:
-	CGiant();
-	CGiant(float TexInfoX, float TexInfoY);
+	explicit CGiant();
+	explicit CGiant(float TexInfoX, float TexInfoY);
 	virtual ~CGiant();
 
 public:

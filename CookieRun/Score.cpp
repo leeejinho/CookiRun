@@ -26,6 +26,7 @@ void CScore::Initialize()
 {
 	if (FAILED(CTexture_Manager::Get_Instance()->Insert_Texture(CTexture_Manager::MULTI_TEX, L"../Image/Item/Score/item09_bigenergy_%d.png", L"Item", L"Score",4)))
 		return;
+	itemNumber = 3;
 
 	dwTime = GetTickCount();
 }
@@ -44,7 +45,7 @@ void CScore::Late_Update()
 void CScore::Render()
 {
 	int iScrollX = (int)CScrollMgr::Get_Instance()->Get_ScrollX();
-	int iScrollY = (int)CScrollMgr::Get_Instance()->Get_ScrollY();
+
 
 	if (dwTime + 122 < GetTickCount())
 	{
@@ -65,7 +66,7 @@ void CScore::Render()
 
 	D3DXMATRIX matScale, matTrans, matWorld;
 	D3DXMatrixScaling(&matScale, 0.5f, 0.5f, 0.f);											//아이템 크기
-	D3DXMatrixTranslation(&matTrans, m_vPos.x + iScrollX, m_vPos.y + iScrollY, 0.f);		//아이템 위치
+	D3DXMatrixTranslation(&matTrans, m_vPos.x + iScrollX, m_vPos.y, 0.f);					//아이템 위치
 	matWorld = matScale * matTrans;
 
 	CGraphic_Device::Get_Instance()->Get_Sprite()->SetTransform(&matWorld);

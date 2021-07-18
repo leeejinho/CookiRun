@@ -37,7 +37,7 @@ void CObjMgr::Update()
 				++iter;
 		}
 	}
-	CCollisionMgr::Collision_Tile(m_listObj[OBJID::PLAYER], m_listObj[OBJID::LAND]);
+	//CCollisionMgr::Collision_Tile(m_listObj[OBJID::LAND], m_listObj[OBJID::PLAYER]);
 	CCollisionMgr::Collision_Rect(m_listObj[OBJID::PLAYER], m_listObj[OBJID::SP]);
 	CCollisionMgr::Collision_Rect(m_listObj[OBJID::PLAYER], m_listObj[OBJID::HP]);
 	CCollisionMgr::Collision_Rect(m_listObj[OBJID::PLAYER], m_listObj[OBJID::GIANT]);

@@ -6,8 +6,8 @@
 class CSpeed : 	public CObj
 {
 public:
-	CSpeed();
-	CSpeed(float TexInfoX, float TexInfoY);
+	explicit CSpeed();
+	explicit CSpeed(float TexInfoX, float TexInfoY);
 	virtual ~CSpeed();
 
 public:
