@@ -173,6 +173,7 @@
     <ClInclude Include="Hpup.h" />
     <ClInclude Include="KeyMgr.h" />
     <ClInclude Include="Land.h" />
+    <ClInclude Include="Magnet.h" />
     <ClInclude Include="MainGame.h" />
     <ClInclude Include="MultiTexture.h" />
     <ClInclude Include="Obj.h" />
@@ -208,6 +209,7 @@
     <ClCompile Include="Hpup.cpp" />
     <ClCompile Include="KeyMgr.cpp" />
     <ClCompile Include="Land.cpp" />
+    <ClCompile Include="Magnet.cpp" />
     <ClCompile Include="MainGame.cpp" />
     <ClCompile Include="MultiTexture.cpp" />
     <ClCompile Include="Obj.cpp" />

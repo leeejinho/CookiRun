@@ -88,6 +88,9 @@
     <ClCompile Include="Texture.cpp">
       <Filter>Texture</Filter>
     </ClCompile>
+    <ClCompile Include="Magnet.cpp">
+      <Filter>01.Obj\00.Item\06.Magnet</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h">
@@ -201,6 +204,9 @@
     <ClInclude Include="Texture.h">
       <Filter>Texture</Filter>
     </ClInclude>
+    <ClInclude Include="Magnet.h">
+      <Filter>01.Obj\00.Item\06.Magnet</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="CookieRun.ico">
@@ -264,6 +270,9 @@
     </Filter>
     <Filter Include="Texture">
       <UniqueIdentifier>{df6f5089-e3a6-45d4-b6df-bc6918a4ede0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Obj\00.Item\06.Magnet">
+      <UniqueIdentifier>{d115c21e-5358-471c-bb14-1063a5dc9f90}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

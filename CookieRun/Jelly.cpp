@@ -3,12 +3,14 @@
 #include "Texture_Manager.h"
 #include "Graphic_Device.h"
 #include "ScrollMgr.h"
+#include "ObjMgr.h"
 
 CJelly::CJelly()
 {
 }
 
 CJelly::CJelly(float TexInfoX, float TexInfoY)
+	:Magnet_Speed(0)
 {
 	m_vPos.x = TexInfoX;
 	m_vPos.y = TexInfoY;
@@ -67,3 +69,18 @@ void CJelly::Render()
 void CJelly::Release()
 {
 }
+
+//void CJelly::Magnet()
+//{
+//	if (Magnet_Speed < 3)
+//		++Magnet_Speed;
+//
+//	D3DXVECTOR3 PlayerPos = CObjMgr::Get_Instance()->Get_Player()->getvpos();
+//
+//	PlayerPos = PlayerPos - m_vPos;
+//
+//	D3DXVec3Normalize(&PlayerPos, &PlayerPos);
+//
+//	m_vPos += PlayerPos*Magnet_Speed;
+//
+//}

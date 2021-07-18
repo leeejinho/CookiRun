@@ -16,6 +16,21 @@ CCollisionMgr::~CCollisionMgr()
 {
 }
 
+
+//void CCollisionMgr::Collision_Magnet_Jelly(CObj *& _Player, list<CObj*>& _Jelly)
+//{
+//	//RECT rc = {};
+//	//for (auto& Jelly : _Jelly)
+//	//{
+//	//	if (IntersectRect(&rc, &_Player->Get_vpos, &Jelly->Get_vpos()))
+//	//	{
+//	//		D3DXVECTOR3 vDis;
+//	//		vDis = _Player->getvpos - jelly->getvpos;
+//	//		if (vDis < 100)
+//	//			jelly->magnet
+//	//	}
+//	//}
+
 void CCollisionMgr::Collision_Rect(list<CObj*>& _Player, list<CObj*>& _Item)
 {
 	RECT rc = {};
@@ -94,4 +109,5 @@ bool CCollisionMgr::Check_Rect(CObj * _Player, CObj * _Tile, float * _x, float *
 //			}
 //		}
 //	}
+
 //}
