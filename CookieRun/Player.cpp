@@ -3,15 +3,11 @@
 #include "Texture_Manager.h"
 #include "KeyMgr.h"
 #include "ScrollMgr.h"
-#include "Hpup.h"
-#include "Giant.h"
-#include "Score.h"
-#include "Speed.h"
 
 CPlayer::CPlayer()
 	: m_dwDelay(0), m_iDrawID(0), m_iMaxDrawID(0), m_pStateKey(L""), m_bSlide(false),
 	m_fJumpPower(0.f), m_fJumpTime(0.f), m_fJumpY(0.f), m_bJump(false), m_bDoubleJump(false), m_iMaxJump(0),
-	m_fSpeed(0.f),m_Up(0.f),MaxSize(0.f),LeastSize(0.f) , Plus(0.f), Speed(false), Giant(false)
+	m_fSpeed(0.f)
 {
 	ZeroMemory(&m_vPos, sizeof(D3DXVECTOR3));
 	ZeroMemory(&m_vSize, sizeof(D3DXVECTOR3));
@@ -32,7 +28,11 @@ void CPlayer::Initialize()
 	CTexture_Manager::Get_Instance()->Insert_Texture(CTexture_Manager::MULTI_TEX, L"../Texture/Player/Hit/cookie0001_hit0%d.png", L"Player", L"Hit", 3);
 	CTexture_Manager::Get_Instance()->Insert_Texture(CTexture_Manager::MULTI_TEX, L"../Texture/Player/Dead/cookie0001_dead0%d.png", L"Player", L"Dead", 5);
 
-	m_vPos = { 200.f, WINCY * 0.5f, 0.f };
+	// seokwon test
+	m_vPos = { 7200.f,WINCY*0.5f , 0.f };
+	// seokwon test
+	
+	//m_vPos = { 200.f, WINCY * 0.5f, 0.f };
 	m_vSize = { 1.f, 1.f, 0.f };
 	m_iDrawID = 0;
 
@@ -51,8 +51,6 @@ int CPlayer::Update()
 	Key_Check();
 	Jumping();
 	Update_Rect();
-	Speed_Item();
-	Giant_Item();
 
 	return OBJ_NOENVENT;
 }
@@ -75,12 +73,11 @@ void CPlayer::Render()
 		m_dwDelay = GetTickCount();
 	}
 	float fScrollX = CScrollMgr::Get_Instance()->Get_ScrollX();
-	float fScrollY = CScrollMgr::Get_Instance()->Get_ScrollY();
 	const TEXINFO* pTexInfo = CTexture_Manager::Get_Instance()->Get_TexInfo_Texture(L"Player", m_pStateKey, m_iDrawID);	
 
 	D3DXMATRIX matScale, matTrans, matWord;
 	D3DXMatrixScaling(&matScale, m_vSize.x, m_vSize.y, 0.f);
-	D3DXMatrixTranslation(&matTrans, m_vPos.x + fScrollX, m_vPos.y + fScrollY, 0.f);
+	D3DXMatrixTranslation(&matTrans, m_vPos.x + fScrollX, m_vPos.y, 0.f);
 	matWord = matScale * matTrans;
 
 	float fCenterX = (float)(pTexInfo->tImageInfo.Width >> 1);
@@ -96,14 +93,21 @@ void CPlayer::Release()
 
 void CPlayer::Move_Player()
 {
-	m_vPos.x += m_fSpeed;
-	CScrollMgr::Get_Instance()->Set_ScrollX(-m_fSpeed);
-	//m_vPos.y += m_fSpeed;
+	//m_vPos.x += m_fSpeed;
+	//CScrollMgr::Get_Instance()->Set_ScrollX(-m_fSpeed);
+	
+	//seokwon test
+	if (CKeyMgr::Get_Instance()->Key_Pressing(VK_RIGHT))
+		m_vPos.x += 5.f;
+	if (CKeyMgr::Get_Instance()->Key_Pressing(VK_LEFT))
+		m_vPos.x -= 5.f;
+	//seokwon test
 }
 
 void CPlayer::Key_Check()
 {
-	if (CKeyMgr::Get_Instance()->Key_Pressing(VK_RIGHT) && !m_bJump)
+	//if (CKeyMgr::Get_Instance()->Key_Pressing(VK_RIGHT) && !m_bJump)
+	if (CKeyMgr::Get_Instance()->Key_Pressing('Z') && !m_bJump)		//////////////////////seokwon test
 	{
 		if (!m_bSlide)
 			m_iDrawID = 0;
@@ -111,7 +115,8 @@ void CPlayer::Key_Check()
 		m_pStateKey = L"Slide";
 		m_iMaxDrawID = 1;
 	}
-	else if (CKeyMgr::Get_Instance()->Key_Down(VK_LEFT) && !m_bSlide && m_iMaxJump > 0)
+	//else if (CKeyMgr::Get_Instance()->Key_Down(VK_LEFT) && !m_bSlide && m_iMaxJump > 0)
+	else if (CKeyMgr::Get_Instance()->Key_Down('X') && !m_bSlide && m_iMaxJump > 0)     //////////////////////seokwon test
 	{
 		if (!m_bJump)
 		{
@@ -183,47 +188,4 @@ void CPlayer::Update_Rect()
 	m_tRect.right = (LONG)(m_vPos.x + 35);
 	m_tRect.bottom = (LONG)(m_vPos.y + (364 / 2));
 	m_tRect.top = (LONG)(m_tRect.bottom - 140);
-}
-
-void CPlayer::Speed_Item()
-{
-	if (Speed)
-	{
-		m_fSpeed = 10;
-		if (dwTime + 2000 < GetTickCount())
-		{
-			Speed = false;
-		}
-	}
-	else
-		m_fSpeed = 5;
-
-}
-
-void CPlayer::Giant_Item()
-{
-	if (Giant)
-	{
-	}
-}
-
-void CPlayer::Player_Item(int _ItemNumber)
-{
-	if (_ItemNumber == 1)	//small Hp
-	{
-		
-	}
-	if (_ItemNumber == 2)	//Giant
-	{
-		
-	}
-	if (_ItemNumber == 3)	//Hp
-	{
-
-	}
-	if (_ItemNumber == 4)	//Speed
-	{
-		dwTime = GetTickCount();
-		Speed = true;
-	}
 }
