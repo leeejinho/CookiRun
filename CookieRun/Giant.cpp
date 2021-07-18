@@ -7,15 +7,17 @@
 
 
 CGiant::CGiant()
-	:iNumber(0)
+
 {
 }
 
 CGiant::CGiant(float TexInfoX, float TexInfoY)
-	:iNumber(0)
+
 {
 	m_vPos.x = TexInfoX;
 	m_vPos.y = TexInfoY;
+
+	m_eType = GIANT;
 }
 
 
@@ -28,7 +30,6 @@ void CGiant::Initialize()
 	if (FAILED(CTexture_Manager::Get_Instance()->Insert_Texture(CTexture_Manager::MULTI_TEX, L"../Image/Item/Giant/item04_biggest_%d.png", L"Item", L"Giant", 4)))
 		return;
 
-	itemNumber = 2;
 	dwTime = GetTickCount();
 }
 

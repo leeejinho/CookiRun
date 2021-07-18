@@ -34,6 +34,12 @@ public:
 	static bool CCollisionMgr::Check_Rect(CObj* _Player, CObj* _Item, float* _x, float* _y);
 
 
+	static void Collision_Player_Item(CObj*& _Player, list<CObj*>& _Item);
+	static void Collision_Player_Jelly(CObj*& _Player, list<CObj*>& _Jelly);
+	static void Collision_Player_Block(CObj*& _Player, list<CObj*>& _Block);
+	static void Collision_Player_Tile(CObj*& _Player, list<CObj*>& _Tile);
+	static void Magnet_Jelly(CObj*& _Player, list<CObj*>& _Jelly);
+
 };
 
 #endif // !__COLLISIONMGR_H__

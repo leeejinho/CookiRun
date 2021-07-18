@@ -2,8 +2,8 @@
 #ifndef __CSORE_H__
 #define __CSORE_H__
 
-#include "Obj.h"
-class CScore :	public CObj
+#include "Item.h"
+class CScore :	public CItem
 {
 public:
 	explicit CScore();
@@ -16,9 +16,7 @@ public:
 	virtual void Late_Update() override;
 	virtual void Render() override;
 	virtual void Release() override;
-private:
-	int iNumber;
-	DWORD dwTime;
+
 };
 
 #endif // !__CSORE_H__

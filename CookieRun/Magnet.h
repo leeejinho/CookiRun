@@ -1,7 +1,7 @@
 #pragma once
-#include "Obj.h"
+#include "Item.h"
 class CMagnet :
-	public CObj
+	public CItem
 {
 public:
 	CMagnet();
@@ -16,9 +16,5 @@ public:
 	virtual void Release() override;
 
 
-
-private:
-	int iNumber;
-	DWORD dwTime;
 };
 

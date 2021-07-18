@@ -31,6 +31,7 @@ public:
 	void Hp(float _x, float _y);
 	void Giant(float _x, float _y);
 	void Speed(float _x, float _y);
+	void Magnet(float _x, float _y);
 
 };
 

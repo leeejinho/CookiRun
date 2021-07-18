@@ -6,15 +6,17 @@
 
 
 CScore::CScore()
-	:iNumber(0)
+
 {
 }
 
 CScore::CScore(float TexInfoX, float TexInfoY)
-	:iNumber(0)
+
 {
 	m_vPos.x = TexInfoX;
 	m_vPos.y = TexInfoY;
+
+	m_eType = HP;
 }
 
 
@@ -26,7 +28,6 @@ void CScore::Initialize()
 {
 	if (FAILED(CTexture_Manager::Get_Instance()->Insert_Texture(CTexture_Manager::MULTI_TEX, L"../Image/Item/Score/item09_bigenergy_%d.png", L"Item", L"Score",4)))
 		return;
-	itemNumber = 3;
 
 	dwTime = GetTickCount();
 }

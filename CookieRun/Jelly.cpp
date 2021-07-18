@@ -14,6 +14,12 @@ CJelly::CJelly(float TexInfoX, float TexInfoY)
 {
 	m_vPos.x = TexInfoX;
 	m_vPos.y = TexInfoY;
+
+	m_eType = JELLY;
+
+	m_vSize.x = 40;
+	m_vSize.y = 53;
+
 }
 
 
@@ -23,6 +29,12 @@ CJelly::~CJelly()
 
 void CJelly::Initialize()
 {
+	m_tRect.left = (LONG)(m_vPos.x - m_vSize.x * 0.5f);
+	m_tRect.top = (LONG)(m_vPos.y - m_vSize.y * 0.5f);
+	m_tRect.right = (LONG)(m_vPos.x + m_vSize.x * 0.5f);
+	m_tRect.bottom = (LONG)(m_vPos.y + m_vSize.y * 0.5f);
+
+
 	if (FAILED(CTexture_Manager::Get_Instance()->Insert_Texture(CTexture_Manager::SINGLE_TEX, L"../Image/Item/Jelly/jellybean_20.png", L"Jelly")))
 		return;
 }

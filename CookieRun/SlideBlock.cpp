@@ -16,6 +16,8 @@ CSlideBlock::CSlideBlock(float _fX, float _fY, DWORD _DrawId)
 
 	m_vSize.x = 184;
 	m_vSize.y = 630;
+
+	
 }
 
 
@@ -30,6 +32,8 @@ void CSlideBlock::Initialize()
 	m_tRect.top = (LONG)(m_vPos.y - m_vSize.y * 0.5f);
 	m_tRect.right = (LONG)(m_vPos.x + m_vSize.x * 0.5f);
 	m_tRect.bottom = (LONG)(m_vPos.y + m_vSize.y * 0.5f);
+
+	Destory();
 }
 
 int CSlideBlock::Update()

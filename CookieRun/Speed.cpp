@@ -6,15 +6,16 @@
 
 
 CSpeed::CSpeed()
-	:iNumber(0)
+
 {
 }
 
 CSpeed::CSpeed(float TexInfoX, float TexInfoY)
-	:iNumber(0)
+
 {
 	m_vPos.x = TexInfoX;
 	m_vPos.y = TexInfoY;
+	m_eType = SPEED;
 }
 
 
@@ -26,7 +27,6 @@ void CSpeed::Initialize()
 {
 	if (FAILED(CTexture_Manager::Get_Instance()->Insert_Texture(CTexture_Manager::MULTI_TEX, L"../Image/Item/Speed/item03_invincible_%d.png", L"Item", L"Speed",4)))
 		return;
-	itemNumber = 4;
 
 	dwTime = GetTickCount();
 }

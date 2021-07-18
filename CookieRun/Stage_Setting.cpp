@@ -10,7 +10,7 @@
 #include "Giant.h"
 #include "Score.h"
 #include "Speed.h"
-
+#include "Magnet.h"
 
 CStage_Setting::CStage_Setting()
 {
@@ -58,6 +58,8 @@ void CStage_Setting::Jelly()
 
 void CStage_Setting::Block()
 {
+	Slide(1, 400.f);
+
 	Land(150, 0.f);
 
 	Jump(0, 2500.f);
@@ -86,7 +88,11 @@ void CStage_Setting::Block()
 
 void CStage_Setting::Item()
 {
-	Giant(7300.f, 350.f);
+	Giant(400.f, 350.f);
+	Hp(500.f, 350.f);
+	smallHp(600.f, 350.f);
+	Speed(700.f, 350.f);
+
 }
 
 void CStage_Setting::Land(int _inum , float _x, float _y/*= 545.f*/)
@@ -253,7 +259,7 @@ void CStage_Setting::smallHp(float _x, float _y)
 	CObj* pobj = nullptr;
 	pobj = new CHpup(_x, _y);
 	pobj->Initialize();
-	CObjMgr::Get_Instance()->Add_Object(pobj, OBJID::BLOCK);
+	CObjMgr::Get_Instance()->Add_Object(pobj, OBJID::ITEM);
 }
 
 void CStage_Setting::Hp(float _x, float _y)
@@ -261,7 +267,7 @@ void CStage_Setting::Hp(float _x, float _y)
 	CObj* pobj = nullptr;
 	pobj = new CScore(_x, _y);
 	pobj->Initialize();
-	CObjMgr::Get_Instance()->Add_Object(pobj, OBJID::BLOCK);
+	CObjMgr::Get_Instance()->Add_Object(pobj, OBJID::ITEM);
 }
 
 void CStage_Setting::Giant(float _x, float _y)
@@ -269,7 +275,7 @@ void CStage_Setting::Giant(float _x, float _y)
 	CObj* pobj = nullptr;
 	pobj = new CGiant(_x, _y);
 	pobj->Initialize();
-	CObjMgr::Get_Instance()->Add_Object(pobj, OBJID::BLOCK);
+	CObjMgr::Get_Instance()->Add_Object(pobj, OBJID::ITEM);
 }
 
 void CStage_Setting::Speed(float _x, float _y)
@@ -277,5 +283,13 @@ void CStage_Setting::Speed(float _x, float _y)
 	CObj* pobj = nullptr;
 	pobj = new CSpeed(_x, _y);
 	pobj->Initialize();
-	CObjMgr::Get_Instance()->Add_Object(pobj, OBJID::BLOCK);
+	CObjMgr::Get_Instance()->Add_Object(pobj, OBJID::ITEM);
+}
+
+void CStage_Setting::Magnet(float _x, float _y)
+{
+	CObj* pobj = nullptr;
+	pobj = new CMagnet(_x, _y);
+	pobj->Initialize();
+	CObjMgr::Get_Instance()->Add_Object(pobj, OBJID::ITEM);
 }
