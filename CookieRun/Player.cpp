@@ -221,6 +221,13 @@ void CPlayer::Update_Rect()
 		m_tRect.bottom = (LONG)(m_vPos.y);
 		m_tRect.top = (LONG)(m_tRect.bottom - 240);
 	}
+	else if (m_bSlide)
+	{
+		m_tRect.left = (LONG)(m_vPos.x - 60);
+		m_tRect.right = (LONG)(m_vPos.x + 60);
+		m_tRect.bottom = (LONG)(m_vPos.y);
+		m_tRect.top = (LONG)(m_tRect.bottom - 60);
+	}
 }
 
 void CPlayer::Hit_Check()
