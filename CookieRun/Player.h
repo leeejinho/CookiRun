@@ -40,7 +40,8 @@ public:
 	void Set_Hp(int _iHp) { m_iHp += _iHp; }
 	void Set_Hit() { m_bHit = true; }
 	void Set_HitTime() { m_dwHitTime = GetTickCount(); }
-	void Set_Speed() { m_fSpeed = 1.f; }
+	void Set_Speed() { m_fSpeed = 0.1f; }
+	void Set_StateHit() { m_pStateKey = L"Hit"; m_iMaxDrawID = 2; m_iDrawID = 0;	}
 
 private:
 	DWORD		m_dwTexDelay;
