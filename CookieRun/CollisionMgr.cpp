@@ -141,7 +141,13 @@ void CCollisionMgr::Collision_Player_Block(CObj *& _Player, list<CObj*>& _Block)
 	{
 		if (IntersectRect(&rc, &_Player->Get_Rect(), &Block->Get_Rect()))
 		{
-			//player hit
+			if (!static_cast<CPlayer*>(_Player)->Get_Hit())
+			{
+				static_cast<CPlayer*>(_Player)->Set_Hit();
+				static_cast<CPlayer*>(_Player)->Set_HitTime();
+				static_cast<CPlayer*>(_Player)->Set_Speed();
+				static_cast<CPlayer*>(_Player)->Set_Hp(-10);
+			}
 		}
 	}
 

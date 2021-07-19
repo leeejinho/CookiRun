@@ -18,6 +18,7 @@ public:
 
 public:
 	int	Get_Hp() { return m_iHp; }
+	bool Get_Hit() { return m_bHit; }
 
 private:
 	void Move_Player();
@@ -27,12 +28,14 @@ private:
 	void Hit_Check();
 	void Speed_Item();
 	void Giant_Item();
+	void Update_Hp();
 	
 public:
 	void Item_Use(CItem::ITEM_TYPE _Type);
-
-	void Update_Hp();
-
+	void Set_Hp(int _iHp) { m_iHp += _iHp; }
+	void Set_Hit() { m_bHit = true; }
+	void Set_HitTime() { m_dwHitTime = GetTickCount(); }
+	void Set_Speed() { m_fSpeed = 1.f; }
 
 private:
 	DWORD		m_dwTexDelay;

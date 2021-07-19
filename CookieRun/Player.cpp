@@ -7,7 +7,7 @@
 CPlayer::CPlayer()
 	: m_dwTexDelay(0), m_iDrawID(0), m_iMaxDrawID(0), m_pStateKey(L""), m_bSlide(false),
 	m_fJumpPower(0.f), m_fJumpTime(0.f), m_fJumpY(0.f), m_bJump(false), m_bDoubleJump(false), m_iMaxJump(0),
-	m_fSpeed(0.f), m_iHp(0), m_dwHpDelay(GetTickCount()),
+	m_fSpeed(0.f), m_iHp(0), m_dwHpDelay(GetTickCount()), m_dwBlinkTime(GetTickCount()),
 	m_bGiant(false), m_bSpeed(false), m_bHit(false)
 {
 	ZeroMemory(&m_vPos, sizeof(D3DXVECTOR3));
@@ -105,6 +105,7 @@ void CPlayer::Render()
 				m_iBlink = 200;
 			else
 				m_iBlink = 100;
+			m_dwBlinkTime = GetTickCount();
 		}
 		CGraphic_Device::Get_Instance()->Get_Sprite()->Draw(pTexInfo->pTexture, nullptr, &D3DXVECTOR3(fCenterX, fCenterY, 0.f), nullptr, D3DCOLOR_ARGB(m_iBlink, 255, 255, 255));
 	}
@@ -238,7 +239,7 @@ void CPlayer::Hit_Check()
 		if (m_fSpeed > 5.f)
 			m_fSpeed = 5.f;
 
-		if (m_dwHitTime + 3000 < GetTickCount())
+		if (m_dwHitTime + 2000 < GetTickCount())
 			m_bHit = false;
 	}
 }
