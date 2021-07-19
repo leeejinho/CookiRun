@@ -14,8 +14,8 @@ CDjumpBlock::CDjumpBlock(float _fX, float _fY ,DWORD _DrawId)
 	DrawId = _DrawId;
 	m_eType = DJUMP;
 
-	m_vSize.x = 76;
-	m_vSize.y = 230;
+	m_vSize.x = 70;
+	m_vSize.y = 200;
 }
 
 

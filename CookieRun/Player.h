@@ -20,6 +20,10 @@ public:
 	int	Get_Hp() { return m_iHp; }
 	const bool Get_Magnet_Item() const { return m_bMagnet; }
 	bool Get_Hit() { return m_bHit; }
+	const bool Get_Giant_Item() const { return m_bGiant; }
+	const bool Get_Speed_Item() const { return m_bSpeed; }
+	
+
 private:
 	void Move_Player();
 	void Key_Check();

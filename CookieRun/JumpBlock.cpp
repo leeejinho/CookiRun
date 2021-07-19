@@ -14,8 +14,8 @@ CJumpBlock::CJumpBlock(float _fX, float _fY, DWORD _DrawId)
 	DrawId = _DrawId;
 	m_eType = JUMP;
 
-	m_vSize.x = 159;
-	m_vSize.y = 124;
+	m_vSize.x = 80;
+	m_vSize.y = 70;
 }
 
 

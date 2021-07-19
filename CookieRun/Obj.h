@@ -26,6 +26,7 @@ public:
 	const RECT& Get_Rect() const { return m_tRect; }
 	D3DXVECTOR3 Get_Pos() { return m_vPos; }
 	D3DXVECTOR3 Get_Size() { return m_vSize; }
+	const bool& Get_Dead() const { return m_bDead; }
 	
 
 

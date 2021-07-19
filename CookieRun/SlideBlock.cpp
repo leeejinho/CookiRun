@@ -14,8 +14,8 @@ CSlideBlock::CSlideBlock(float _fX, float _fY, DWORD _DrawId)
 	DrawId = _DrawId;
 	m_eType = SLIDE;
 
-	m_vSize.x = 184;
-	m_vSize.y = 630;
+	m_vSize.x = 130;
+	m_vSize.y = 580;
 
 	
 }

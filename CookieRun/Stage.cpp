@@ -4,8 +4,10 @@
 #include "ObjMgr.h"
 #include "KeyMgr.h"
 #include "ScrollMgr.h"
-
+#include "Player.h"
 #include "Stage_Setting.h"
+#include "Hpbar.h"
+
 
 CStage::CStage()
 	:Stage_Set(nullptr)
@@ -38,7 +40,17 @@ void CStage::Initialize()
 		Stage_Set = new CStage_Setting;
 	Stage_Set->stage1_Setting();
 
-	//CScrollMgr::Get_Instance()->Set_ScrollX(-7000.f);
+	CObj* pObj = new CPlayer;
+	pObj->Initialize();
+	CObjMgr::Get_Instance()->Add_Object(pObj, OBJID::PLAYER);
+
+	pObj = new CHpbar;
+	pObj->Initialize();
+	CObjMgr::Get_Instance()->Add_Object(pObj, OBJID::UI);
+
+	CScrollMgr::Get_Instance()->Set_ScrollFix(0.f, 0.f);
+
+	//CScrollMgr::Get_Instance()->Set_ScrollX(-14000.f);
 	///////seokwon Test
 
 }
@@ -59,6 +71,8 @@ void CStage::Update()
 	///////seokwon Test
 
 	CObjMgr::Get_Instance()->Update();
+
+
 }
 
 void CStage::Late_Update()
@@ -75,6 +89,8 @@ void CStage::Render()
 void CStage::Release()
 {
 	SAFE_DELETE(Stage_Set);
+	CTexture_Manager::Destroy_Instance();
+	CObjMgr::Destroy_Instance();
 }
 
 
