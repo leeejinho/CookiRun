@@ -43,6 +43,9 @@ int CJelly::Update()
 {
 	if (m_bDead)
 		return OBJ_DEAD;
+
+	Update_Rect();
+
 	return OBJ_NOENVENT;
 }
 
@@ -82,17 +85,28 @@ void CJelly::Release()
 {
 }
 
-//void CJelly::Magnet()
-//{
-//	if (Magnet_Speed < 3)
-//		++Magnet_Speed;
-//
-//	D3DXVECTOR3 PlayerPos = CObjMgr::Get_Instance()->Get_Player()->getvpos();
-//
-//	PlayerPos = PlayerPos - m_vPos;
-//
-//	D3DXVec3Normalize(&PlayerPos, &PlayerPos);
-//
-//	m_vPos += PlayerPos*Magnet_Speed;
-//
-//}
+void CJelly::Update_Rect()
+{
+	m_tRect.left = (LONG)(m_vPos.x - m_vSize.x * 0.5f);
+	m_tRect.top = (LONG)(m_vPos.y - m_vSize.y * 0.5f);
+	m_tRect.right = (LONG)(m_vPos.x + m_vSize.x * 0.5f);
+	m_tRect.bottom = (LONG)(m_vPos.y + m_vSize.y * 0.5f);
+
+}
+
+void CJelly::Magnet()
+{
+	if (Magnet_Speed < 7)
+		++Magnet_Speed;
+	 
+	RECT PlayerRect = CObjMgr::Get_Instance()->Get_Player()->Get_Rect();
+
+	D3DXVECTOR3 PlayerPos = { (PlayerRect.right + PlayerRect.left)*0.5f,(PlayerRect.top + PlayerRect.bottom)*0.5f , 0.f };
+
+	PlayerPos = PlayerPos - m_vPos;
+
+	D3DXVec3Normalize(&PlayerPos, &PlayerPos);
+
+	m_vPos += PlayerPos*Magnet_Speed;
+
+}

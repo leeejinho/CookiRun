@@ -37,6 +37,9 @@ int CJumpBlock::Update()
 	if (m_bDead)
 		return OBJ_DEAD;
 
+	if (m_bDestory)
+		Destory();
+
 	return OBJ_NOENVENT;
 }
 

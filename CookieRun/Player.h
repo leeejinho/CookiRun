@@ -18,7 +18,7 @@ public:
 
 public:
 	int	Get_Hp() { return m_iHp; }
-
+	const bool Get_Magnet_Item() const { return m_bMagnet; }
 private:
 	void Move_Player();
 	void Key_Check();
@@ -27,6 +27,8 @@ private:
 
 	void Speed_Item();
 	void Giant_Item();
+
+	void Magnet_Item();
 	
 public:
 	void Item_Use(CItem::ITEM_TYPE _Type);
@@ -54,13 +56,14 @@ private:
 	float		Plus;
 	bool		Speed;
 	bool		Giant;
+	bool		m_bMagnet;
 
 	int			m_iDrawID;
 	int			m_iMaxDrawID;
 
 	float			m_Up;
 
-	
+	DWORD		m_dwMagnetTime;
 	DWORD		m_dwHpDelay;
 	int			m_iHp;
 

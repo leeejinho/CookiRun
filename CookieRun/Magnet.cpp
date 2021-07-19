@@ -22,7 +22,7 @@ CMagnet::~CMagnet()
 
 void CMagnet::Initialize()
 {
-	if (FAILED(CTexture_Manager::Get_Instance()->Insert_Texture(CTexture_Manager::MULTI_TEX, L"../Image/Item/Hp/item08_energy_%d.png", L"Item", L"HpUp", 4)))
+	if (FAILED(CTexture_Manager::Get_Instance()->Insert_Texture(CTexture_Manager::MULTI_TEX, L"../Image/Item/Magnet/item05_magnet_%d.png", L"Item", L"Magnet", 4)))
 		return;
 
 	dwTime = GetTickCount();
@@ -54,7 +54,7 @@ void CMagnet::Render()
 		dwTime = GetTickCount();
 	}
 
-	const TEXINFO* pTexInfo = CTexture_Manager::Get_Instance()->Get_TexInfo_Texture(L"Item", L"HpUp", iNumber);
+	const TEXINFO* pTexInfo = CTexture_Manager::Get_Instance()->Get_TexInfo_Texture(L"Item", L"Magnet", iNumber);
 
 	if (pTexInfo == nullptr)
 		return;
@@ -71,7 +71,7 @@ void CMagnet::Render()
 	CGraphic_Device::Get_Instance()->Get_Sprite()->Draw(pTexInfo->pTexture, nullptr, &D3DXVECTOR3(fCenterX, fCenterY, 0.f), nullptr, D3DCOLOR_ARGB(255, 255, 255, 255));
 
 	//						  왼쪽						 위						  오른쪽				 아래
-	RECT Hpup = { fCenterX - 20 , fCenterY - 20 , fCenterX + 20 ,fCenterY + 20 };
+	m_tRect = { LONG(m_vPos.x - 20) ,LONG(m_vPos.y - 20) , LONG(m_vPos.x + 20) , LONG(m_vPos.y + 20) };
 	//	left , top , right , bottom
 }
 

@@ -27,8 +27,7 @@ public:
 	void Destory();
 
 protected:
-	D3DXVECTOR3	m_vPos;
-	D3DXVECTOR3	m_vSize;
+
 	DWORD	DrawId;
 	DWORD	m_dwDestory;
 

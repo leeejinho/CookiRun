@@ -14,7 +14,7 @@ public:
 	void Item();
 
 	void Land( int _inum, float _x, float _y = 545.f);
-	void Slide(DWORD _DrawID,float _x, float _y = 70.f);
+	void Slide(DWORD _DrawID,float _x, float _y = 130.f);
 	void Jump(DWORD _DrawID, float _x, float _y = 430.f);
 	void Djump(DWORD _DrawID, float _x, float _y = 380.f);
 
