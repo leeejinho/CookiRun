@@ -30,15 +30,15 @@ void CPlayer::Initialize()
 	CTexture_Manager::Get_Instance()->Insert_Texture(CTexture_Manager::MULTI_TEX, L"../Texture/Player/Dead/cookie0001_dead0%d.png", L"Player", L"Dead", 5);
 
 	// seokwon test
-	//m_vPos = { 7200.f,WINCY*0.5f , 0.f };
+	//m_vPos = { 14200.f,WINCY*0.5f +150.f , 0.f };
 	// seokwon test
 	
-	m_vPos = { 200.f, WINCY * 0.5f, 0.f };
+	m_vPos = { 200.f, WINCY * 0.5f + 150.f, 0.f };
 	m_vSize = { 1.f, 1.f, 0.f };
 	m_iDrawID = 0;
 
 	m_pStateKey = L"Run";
-	m_fJumpPower = 50.f;
+	m_fJumpPower = 55.f;
 	m_iMaxJump = 2;
 	m_fSpeed = 5.f;
 	m_iHp = 100;
@@ -58,7 +58,7 @@ int CPlayer::Update()
 		Giant_Item();
 		Update_Hp();
 		Update_Rect();
-
+		Hit_Check();
 		if (m_bMagnet)
 			Magnet_Item();
 	}
@@ -67,6 +67,12 @@ int CPlayer::Update()
 
 void CPlayer::Late_Update()
 {
+	if (m_vPos.y > WINCY + 300)
+	{
+		m_bDead = true;
+		m_pStateKey = L"Dead";
+		m_iMaxDrawID = 4;
+	}
 }
 
 void CPlayer::Render()
@@ -183,8 +189,7 @@ void CPlayer::Key_Check()
 		m_bSlide = false;
 		m_pStateKey = L"Run";
 		m_iMaxDrawID = 3;
-
-	}	
+	}
 }
 
 void CPlayer::Jumping()
@@ -250,7 +255,7 @@ void CPlayer::Hit_Check()
 
 void CPlayer::Speed_Item()
 {
-	if (m_bSpeed && m_dwSpeedTime + 2000 < GetTickCount())
+	if (m_bSpeed && m_dwSpeedTime + 2500 < GetTickCount())
 	{
 		m_bSpeed = false;
 		m_fSpeed = 5.f;
@@ -346,9 +351,9 @@ void CPlayer::Update_Hp()
 	}
 	else
 	{
-		if (m_dwHpDelay + 500 < GetTickCount())
+		if (m_dwHpDelay + 300 < GetTickCount())
 		{
-			//--m_iHp;
+			--m_iHp;
 			m_dwHpDelay = GetTickCount();
 		}
 	}

@@ -27,7 +27,7 @@ void CBlock::Destory()
 		if (GetTickCount() - m_dwDestory > 2000)
 			m_bDead = true;
 		m_fDestory_Angle += 10.f;
-		m_fDestory_Scale -= 0.02f;
+		m_fDestory_Scale -= 0.01f;
 		m_fDestory_Trans += 10.f;
 	}
 

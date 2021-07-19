@@ -9,6 +9,8 @@
 #include "Item.h"
 #include "Jelly.h"
 #include "ObjMgr.h"
+#include "Block.h"
+
 
 CCollisionMgr::CCollisionMgr()
 {
@@ -143,17 +145,21 @@ void CCollisionMgr::Collision_Player_Block(CObj *& _Player, list<CObj*>& _Block)
 	{
 		if (IntersectRect(&rc, &_Player->Get_Rect(), &Block->Get_Rect()))
 		{
-			if (!static_cast<CPlayer*>(_Player)->Get_Hit())
+			if (static_cast<CPlayer*>(_Player)->Get_Giant_Item() || static_cast<CPlayer*>(_Player)->Get_Speed_Item())
+				static_cast<CBlock*>(Block)->Destory();
+			else
 			{
-				static_cast<CPlayer*>(_Player)->Set_Hit();
-				static_cast<CPlayer*>(_Player)->Set_HitTime();
-				static_cast<CPlayer*>(_Player)->Set_StateHit();
-				static_cast<CPlayer*>(_Player)->Set_Speed();
-				static_cast<CPlayer*>(_Player)->Set_Hp(-10);
-			}
+				if (!static_cast<CPlayer*>(_Player)->Get_Hit())
+				{
+					static_cast<CPlayer*>(_Player)->Set_Hit();
+					static_cast<CPlayer*>(_Player)->Set_HitTime();
+          static_cast<CPlayer*>(_Player)->Set_StateHit();
+					static_cast<CPlayer*>(_Player)->Set_Speed();
+					static_cast<CPlayer*>(_Player)->Set_Hp(-10);
+				}
+			} 
 		}
 	}
-
 }
 
 void CCollisionMgr::Collision_Player_Tile(CObj *& _Player, list<CObj*>& _Tile)

@@ -58,8 +58,6 @@ void CStage_Setting::Jelly()
 
 void CStage_Setting::Block()
 {
-
-
 	Land(150, 0.f);
 
 	Jump(0, 2500.f);
@@ -94,9 +92,14 @@ void CStage_Setting::Block()
 
 void CStage_Setting::Item()
 {
+	smallHp(1900.f, 200.f);
+	Hp(5200.f, 400.f);
 	Magnet(6300.f, 300.f);
 	Giant(7300.f, 300.f);
+	Hp(8250.f, 300.f);
 	Speed(8300.f, 300.f);
+	Hp(11500.f, 400.f);
+	smallHp(13220.f, 200.f);
 }
 
 void CStage_Setting::Land(int _inum , float _x, float _y/*= 545.f*/)
@@ -214,6 +217,7 @@ void CStage_Setting::Jelly_Jump(float _x, float _y)
 
 void CStage_Setting::Jelly_Djump(float _x, float _y)
 {
+	_y -= 50.f;
 	CObj* pobj = nullptr;
 	for (int i = 3; i < 10; ++i)
 	{

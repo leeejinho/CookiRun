@@ -2,6 +2,9 @@
 #include "SceneMgr.h"
 #include "Scene.h"
 #include "Stage.h"
+#include "Player.h"
+#include "ObjMgr.h"
+#include "KeyMgr.h"
 
 CSceneMgr* CSceneMgr::m_Instance = nullptr;
 CSceneMgr::CSceneMgr()
@@ -36,6 +39,15 @@ void CSceneMgr::Scene_Change(SCENEID _eID)
 
 void CSceneMgr::Update()
 {
+	if (CObjMgr::Get_Instance()->Get_Player()->Get_Dead())
+	{
+		if (CKeyMgr::Get_Instance()->Key_Down('R'))
+		{
+			SAFE_DELETE(m_pScene);
+			m_pScene = new CStage;
+			m_pScene->Initialize();
+		}
+	}
 	m_pScene->Update();
 }
 
