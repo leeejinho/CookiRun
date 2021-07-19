@@ -143,7 +143,13 @@ void CCollisionMgr::Collision_Player_Block(CObj *& _Player, list<CObj*>& _Block)
 	{
 		if (IntersectRect(&rc, &_Player->Get_Rect(), &Block->Get_Rect()))
 		{
-			//player hit
+			if (!static_cast<CPlayer*>(_Player)->Get_Hit())
+			{
+				static_cast<CPlayer*>(_Player)->Set_Hit();
+				static_cast<CPlayer*>(_Player)->Set_HitTime();
+				static_cast<CPlayer*>(_Player)->Set_Speed();
+				static_cast<CPlayer*>(_Player)->Set_Hp(-10);
+			}
 		}
 	}
 
@@ -157,7 +163,7 @@ void CCollisionMgr::Collision_Player_Tile(CObj *& _Player, list<CObj*>& _Tile)
 	{
 		if (IntersectRect(&rc, &_Player->Get_Rect(), &Tile->Get_Rect()))
 		{
-			//tile
+			_Player->Set_PosY(Tile->Get_Rect().top);
 		}
 	}
 

@@ -7,7 +7,8 @@
 CPlayer::CPlayer()
 	: m_dwTexDelay(0), m_iDrawID(0), m_iMaxDrawID(0), m_pStateKey(L""), m_bSlide(false),
 	m_fJumpPower(0.f), m_fJumpTime(0.f), m_fJumpY(0.f), m_bJump(false), m_bDoubleJump(false), m_iMaxJump(0),
-	m_fSpeed(0.f), m_iHp(0), m_dwHpDelay(GetTickCount()) , m_bMagnet(false), m_dwMagnetTime(0)
+	m_fSpeed(0.f), m_iHp(0), m_dwHpDelay(GetTickCount()), m_dwBlinkTime(GetTickCount()),
+	m_bGiant(false), m_bSpeed(false), m_bHit(false), m_bMagnet(false), m_dwMagnetTime(0)
 {
 	ZeroMemory(&m_vPos, sizeof(D3DXVECTOR3));
 	ZeroMemory(&m_vSize, sizeof(D3DXVECTOR3));
@@ -49,10 +50,11 @@ int CPlayer::Update()
 	{
 		//if (m_iDrawID == 4)
 			//return OBJ_DEAD;
-
 		Move_Player();
 		Key_Check();
 		Jumping();
+		Speed_Item();
+		Giant_Item();
 		Update_Hp();
 		Update_Rect();
 
@@ -78,6 +80,11 @@ void CPlayer::Render()
 				m_iDrawID = 9;
 			else if (m_bDead)
 				m_iDrawID = 4;
+			if (m_pStateKey == L"Hit")
+			{
+				m_pStateKey = L"Run";
+				m_iMaxDrawID = 3;
+			}
 		}
 		m_dwTexDelay = GetTickCount();
 	}
@@ -90,9 +97,23 @@ void CPlayer::Render()
 	matWord = matScale * matTrans;
 
 	float fCenterX = (float)(pTexInfo->tImageInfo.Width >> 1);
-	float fCenterY = (float)(pTexInfo->tImageInfo.Height >> 1);
+	float fCenterY = (float)(pTexInfo->tImageInfo.Height);
 	CGraphic_Device::Get_Instance()->Get_Sprite()->SetTransform(&matWord);
-	CGraphic_Device::Get_Instance()->Get_Sprite()->Draw(pTexInfo->pTexture, nullptr, &D3DXVECTOR3(fCenterX, fCenterY, 0.f), nullptr, D3DCOLOR_ARGB(255, 255, 255, 255));
+	
+	if (m_bHit)
+	{
+		if (m_dwBlinkTime + 500 < GetTickCount())
+		{
+			if (m_iBlink == 100)
+				m_iBlink = 200;
+			else
+				m_iBlink = 100;
+			m_dwBlinkTime = GetTickCount();
+		}
+		CGraphic_Device::Get_Instance()->Get_Sprite()->Draw(pTexInfo->pTexture, nullptr, &D3DXVECTOR3(fCenterX, fCenterY, 0.f), nullptr, D3DCOLOR_ARGB(m_iBlink, 255, 255, 255));
+	}
+	else
+		CGraphic_Device::Get_Instance()->Get_Sprite()->Draw(pTexInfo->pTexture, nullptr, &D3DXVECTOR3(fCenterX, fCenterY, 0.f), nullptr, D3DCOLOR_ARGB(255, 255, 255, 255));
 }
 
 void CPlayer::Release()
@@ -174,9 +195,9 @@ void CPlayer::Jumping()
 		m_vPos.y = m_fJumpY - (m_fJumpPower * m_fJumpTime - 0.5f * 9.8f * m_fJumpTime * m_fJumpTime);
 		m_fJumpTime += 0.2f;
 
-		if (m_vPos.y > fY)
+		if (m_vPos.y > 480.f)
 		{
-			m_vPos.y = fY;
+			m_vPos.y = 480.f;
 			m_bJump = false;
 			m_bDoubleJump = false;
 			m_iDrawID = 0;
@@ -184,24 +205,83 @@ void CPlayer::Jumping()
 			m_iMaxJump = 2;
 		}
 	}
-
-
+	else
+	{
+		m_vPos.y += m_fSpeed;
+	}
 }
 
 void CPlayer::Update_Rect()
 {
 	m_tRect.left = (LONG)(m_vPos.x - 35);
 	m_tRect.right = (LONG)(m_vPos.x + 35);
-	m_tRect.bottom = (LONG)(m_vPos.y + (364 / 2));
-	m_tRect.top = (LONG)(m_tRect.bottom - 140);
+	m_tRect.bottom = (LONG)(m_vPos.y);
+	m_tRect.top = (LONG)(m_tRect.bottom - 120);
+
+	if (m_bGiant)
+	{
+		m_tRect.left = (LONG)(m_vPos.x - 70);
+		m_tRect.right = (LONG)(m_vPos.x + 70);
+		m_tRect.bottom = (LONG)(m_vPos.y);
+		m_tRect.top = (LONG)(m_tRect.bottom - 240);
+	}
+	else if (m_bSlide)
+	{
+		m_tRect.left = (LONG)(m_vPos.x - 60);
+		m_tRect.right = (LONG)(m_vPos.x + 60);
+		m_tRect.bottom = (LONG)(m_vPos.y);
+		m_tRect.top = (LONG)(m_tRect.bottom - 60);
+	}
+}
+
+void CPlayer::Hit_Check()
+{
+	if (m_bHit)
+	{
+		m_fSpeed += 1.f;
+		if (m_fSpeed > 5.f)
+			m_fSpeed = 5.f;
+
+		if (m_dwHitTime + 2000 < GetTickCount())
+			m_bHit = false;
+	}
 }
 
 void CPlayer::Speed_Item()
 {
+
+	if (m_dwSpeedTime + 2000 < GetTickCount())
+	{
+		m_bSpeed = false;
+		m_fSpeed = 5.f;
+	}
 }
 
 void CPlayer::Giant_Item()
 {
+	if (m_bGiant)
+	{
+		if (m_dwGiantTime + 3000 > GetTickCount())
+		{
+			m_vSize += D3DXVECTOR3{ 0.02f, 0.02f, 0.f };
+			if (m_vSize.x >= 2.f)
+			{
+				m_vSize = { 2.f, 2.f, 0.f };
+			}
+		}
+
+		else if (m_dwGiantTime + 3000 < GetTickCount())
+		{
+			m_vSize -= D3DXVECTOR3{ 0.02f, 0.02f, 0.f };
+			if (m_vSize.x <= 1.f)
+			{
+				m_vSize = { 1.f, 1.f, 0.f };
+				m_bGiant = false;
+			}
+		}
+	}
+
+	
 }
 
 void CPlayer::Magnet_Item()
@@ -223,19 +303,22 @@ void CPlayer::Item_Use(CItem::ITEM_TYPE _Type)
 	switch (_Type)
 	{
 	case CItem::SMALL_HP:
-
+		m_iHp += 10;
 		break;
 	case CItem::HP:
-
+		m_iHp += 30;
 		break;
 	case CItem::JELLY:
 
 		break;
 	case CItem::GIANT:
-
+		m_dwGiantTime = GetTickCount();
+		m_bGiant = true;
 		break;
 	case CItem::SPEED:
-
+		m_dwSpeedTime = GetTickCount();
+		m_bSpeed = true;
+		m_fSpeed = 10.f;
 		break;
 	case CItem::MAGNET:
 		Magnet_Item();
@@ -257,9 +340,13 @@ void CPlayer::Update_Hp()
 		m_pStateKey = L"Dead";
 		m_iMaxDrawID = 4;
 	}
+	else if (m_iHp > 100)
+	{
+		m_iHp = 100;
+	}
 	else
 	{
-		if (m_dwHpDelay + 100 < GetTickCount())
+		if (m_dwHpDelay + 500 < GetTickCount())
 		{
 			//--m_iHp;
 			m_dwHpDelay = GetTickCount();
