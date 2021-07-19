@@ -53,6 +53,7 @@ int CPlayer::Update()
 		Move_Player();
 		Key_Check();
 		Jumping();
+		Hit_Check();
 		Speed_Item();
 		Giant_Item();
 		Update_Hp();
@@ -102,10 +103,10 @@ void CPlayer::Render()
 	
 	if (m_bHit)
 	{
-		if (m_dwBlinkTime + 500 < GetTickCount())
+		if (m_dwBlinkTime + 300 < GetTickCount())
 		{
 			if (m_iBlink == 100)
-				m_iBlink = 200;
+				m_iBlink = 255;
 			else
 				m_iBlink = 100;
 			m_dwBlinkTime = GetTickCount();
@@ -238,7 +239,7 @@ void CPlayer::Hit_Check()
 {
 	if (m_bHit)
 	{
-		m_fSpeed += 1.f;
+		m_fSpeed += 0.1f;
 		if (m_fSpeed > 5.f)
 			m_fSpeed = 5.f;
 
@@ -249,8 +250,7 @@ void CPlayer::Hit_Check()
 
 void CPlayer::Speed_Item()
 {
-
-	if (m_dwSpeedTime + 2000 < GetTickCount())
+	if (m_bSpeed && m_dwSpeedTime + 2000 < GetTickCount())
 	{
 		m_bSpeed = false;
 		m_fSpeed = 5.f;

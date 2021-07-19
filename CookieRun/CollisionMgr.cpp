@@ -147,6 +147,7 @@ void CCollisionMgr::Collision_Player_Block(CObj *& _Player, list<CObj*>& _Block)
 			{
 				static_cast<CPlayer*>(_Player)->Set_Hit();
 				static_cast<CPlayer*>(_Player)->Set_HitTime();
+				static_cast<CPlayer*>(_Player)->Set_StateHit();
 				static_cast<CPlayer*>(_Player)->Set_Speed();
 				static_cast<CPlayer*>(_Player)->Set_Hp(-10);
 			}
