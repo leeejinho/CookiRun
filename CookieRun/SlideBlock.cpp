@@ -33,13 +33,15 @@ void CSlideBlock::Initialize()
 	m_tRect.right = (LONG)(m_vPos.x + m_vSize.x * 0.5f);
 	m_tRect.bottom = (LONG)(m_vPos.y + m_vSize.y * 0.5f);
 
-	Destory();
 }
 
 int CSlideBlock::Update()
 {
 	if (m_bDead)
 		return OBJ_DEAD;
+
+	if (m_bDestory)
+		Destory();
 
 	return OBJ_NOENVENT;
 }

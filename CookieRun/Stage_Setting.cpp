@@ -58,7 +58,7 @@ void CStage_Setting::Jelly()
 
 void CStage_Setting::Block()
 {
-	Slide(1, 400.f);
+
 
 	Land(150, 0.f);
 
@@ -68,10 +68,16 @@ void CStage_Setting::Block()
 	Slide(0, 4000.f);
 	Slide(1, 4150.f);
 	Djump(0, 4800.f);
-	for (int i = 0; i < 10; ++i)
+	for (int i = 0; i < 5; ++i)
 	{
 		Djump((i * 3) % 6, 7500 + i*100.f);
 	}
+
+	for (int i = 1; i < 11; ++i)
+	{
+		Slide(i%2, 8500 + i*100.f);
+	}
+
 	Slide(1, 10000.f);
 	Jump(1, 10250.f);
 	Slide(0, 10500.f);
@@ -88,11 +94,9 @@ void CStage_Setting::Block()
 
 void CStage_Setting::Item()
 {
-	Giant(400.f, 350.f);
-	Hp(500.f, 350.f);
-	smallHp(600.f, 350.f);
-	Speed(700.f, 350.f);
-
+	Magnet(6300.f, 300.f);
+	Giant(7300.f, 300.f);
+	Speed(8300.f, 300.f);
 }
 
 void CStage_Setting::Land(int _inum , float _x, float _y/*= 545.f*/)

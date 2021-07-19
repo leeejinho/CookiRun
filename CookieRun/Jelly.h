@@ -14,8 +14,11 @@ public:
 	virtual void Render() override;
 	virtual void Release() override;
 
-//public:
-//	void Magnet();
+private:
+	void Update_Rect();
+
+public:
+	void Magnet();
 private:
 	int		Magnet_Speed;
 };

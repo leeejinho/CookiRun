@@ -8,7 +8,7 @@ CPlayer::CPlayer()
 	: m_dwTexDelay(0), m_iDrawID(0), m_iMaxDrawID(0), m_pStateKey(L""), m_bSlide(false),
 	m_fJumpPower(0.f), m_fJumpTime(0.f), m_fJumpY(0.f), m_bJump(false), m_bDoubleJump(false), m_iMaxJump(0),
 	m_fSpeed(0.f), m_iHp(0), m_dwHpDelay(GetTickCount()), m_dwBlinkTime(GetTickCount()),
-	m_bGiant(false), m_bSpeed(false), m_bHit(false)
+	m_bGiant(false), m_bSpeed(false), m_bHit(false), m_bMagnet(false), m_dwMagnetTime(0)
 {
 	ZeroMemory(&m_vPos, sizeof(D3DXVECTOR3));
 	ZeroMemory(&m_vSize, sizeof(D3DXVECTOR3));
@@ -57,6 +57,9 @@ int CPlayer::Update()
 		Giant_Item();
 		Update_Hp();
 		Update_Rect();
+
+		if (m_bMagnet)
+			Magnet_Item();
 	}
 	return OBJ_NOENVENT;
 }
@@ -281,6 +284,20 @@ void CPlayer::Giant_Item()
 	
 }
 
+void CPlayer::Magnet_Item()
+{
+	if (!m_bMagnet)
+	{
+		m_dwMagnetTime = GetTickCount();
+		m_bMagnet = true;
+	}
+	else
+	{
+		if (GetTickCount() - m_dwMagnetTime > 2000)
+			m_bMagnet = false;
+	}
+}
+
 void CPlayer::Item_Use(CItem::ITEM_TYPE _Type)
 {
 	switch (_Type)
@@ -304,7 +321,7 @@ void CPlayer::Item_Use(CItem::ITEM_TYPE _Type)
 		m_fSpeed = 10.f;
 		break;
 	case CItem::MAGNET:
-
+		Magnet_Item();
 		break;
 	}
 }
@@ -331,7 +348,7 @@ void CPlayer::Update_Hp()
 	{
 		if (m_dwHpDelay + 500 < GetTickCount())
 		{
-			--m_iHp;
+			//--m_iHp;
 			m_dwHpDelay = GetTickCount();
 		}
 	}

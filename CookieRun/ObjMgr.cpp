@@ -7,6 +7,7 @@
 #include "DjumpBlock.h"
 #include "SlideBlock.h"
 #include "CollisionMgr.h"
+#include "Player.h"
 
 
 CObjMgr* CObjMgr::m_pInstance = nullptr;
@@ -44,14 +45,14 @@ void CObjMgr::Update()
 	//CCollisionMgr::Collision_Rect(m_listObj[OBJID::PLAYER], m_listObj[OBJID::SPEED]);
 	//CCollisionMgr::Collision_Rect(m_listObj[OBJID::PLAYER], m_listObj[OBJID::JELLY]);
 
+	if (static_cast<CPlayer*>(Get_Player())->Get_Magnet_Item())
+		CCollisionMgr::Magnet_Jelly(m_listObj[OBJID::PLAYER].front(), m_listObj[OBJID::JELLY]);
 	CCollisionMgr::Collision_Player_Item(m_listObj[OBJID::PLAYER].front(), m_listObj[OBJID::ITEM]);
 	CCollisionMgr::Collision_Player_Jelly(m_listObj[OBJID::PLAYER].front(), m_listObj[OBJID::JELLY]);
 	CCollisionMgr::Collision_Player_Block(m_listObj[OBJID::PLAYER].front(), m_listObj[OBJID::BLOCK]);
 	CCollisionMgr::Collision_Player_Tile(m_listObj[OBJID::PLAYER].front(), m_listObj[OBJID::LAND]);
+
 	
-	/*
-	CCollisionMgr::Magnet_Jelly();
-	*/
 
 }
 

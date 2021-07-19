@@ -7,6 +7,8 @@
 #include "Speed.h"
 #include "Player.h"
 #include "Item.h"
+#include "Jelly.h"
+#include "ObjMgr.h"
 
 CCollisionMgr::CCollisionMgr()
 {
@@ -169,7 +171,16 @@ void CCollisionMgr::Collision_Player_Tile(CObj *& _Player, list<CObj*>& _Tile)
 
 void CCollisionMgr::Magnet_Jelly(CObj *& _Player, list<CObj*>& _Jelly)
 {
+	RECT PlayerRect = CObjMgr::Get_Instance()->Get_Player()->Get_Rect();
+
+	D3DXVECTOR3 PlayerPos = { (PlayerRect.right + PlayerRect.left)*0.5f,(PlayerRect.top + PlayerRect.bottom)*0.5f , 0.f };
+
 	
+	for (auto& Jelly : _Jelly)
+	{
+		if (200 > D3DXVec3Length(&(PlayerPos - Jelly->Get_Pos())))
+			static_cast<CJelly*>(Jelly)->Magnet();
+	}
 }
 
 //void CCollisionMgr::Collision_Tile(list<CObj*>& _Player, list<CObj*>& _Tile)
