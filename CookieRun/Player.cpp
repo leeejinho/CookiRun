@@ -248,7 +248,6 @@ void CPlayer::Hit_Check()
 		if (m_fSpeed > 5.f)
 			m_fSpeed = 5.f;
 
-		if (m_dwHitTime + 2000 < GetTickCount())
 			m_bHit = false;
 	}
 }
